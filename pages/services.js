@@ -149,7 +149,7 @@ const platforms = {
     ],
   },
   snapchat: {
-    iconColor: '#111111',
+    iconColor: '#F7B731',
     label: 'Snapchat',
     color: 'from-yellow-400 to-amber-500',
     bg: 'rgba(234,179,8,0.08)',

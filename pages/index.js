@@ -65,10 +65,10 @@ const services = [
   },
   {
     name: 'Snapchat',
-    brandColor: '#111111',
+    brandColor: '#F7B731',
     color: 'from-yellow-400 to-yellow-500',
-    iconBg: 'rgba(234,179,8,0.1)',
-    iconBorder: 'rgba(234,179,8,0.25)',
+    iconBg: 'rgba(247,183,49,0.15)',
+    iconBorder: 'rgba(247,183,49,0.35)',
     shadow: 'rgba(234,179,8,0.2)',
     icon: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
@@ -98,7 +98,7 @@ const services = [
 const stats = [
   { value: '20+', label: 'Countries Served', icon: '🌍' },
   { value: '98%', label: 'Client Satisfaction', icon: '⭐' },
-  { value: '500K+', label: 'Followers Generated', icon: '📈' },
+  { value: '5M+', label: 'Followers Generated', icon: '📈' },
   { value: '$2M+', label: 'Revenue Monetised', icon: '💰' },
   { value: '500+', label: 'Projects Completed', icon: '✅' },
   { value: '24/7', label: 'Support Available', icon: '🛡️' },
@@ -202,7 +202,7 @@ export default function Home() {
           <div className="text-center mb-14 animate-on-scroll">
             <span className="badge mb-4">What We Do</span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-              Six Platforms, <span className="text-slate-900">One Agency</span>
+              All Platforms, <span className="text-slate-900">One Agency</span>
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto leading-relaxed">
               Click any platform below to discover exactly how we grow your presence and drive real revenue.

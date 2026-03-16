@@ -64,7 +64,7 @@ export default function Layout({ children, title, description }) {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group" onClick={() => setMobileOpen(false)}>
-              <img src="/creatorusflow_icon.ico" alt="CREATORUSFLOW logo" width={34} height={34} style={{ display: 'block' }} />
+              <img src="/rounded_icon_big_logo.ico" alt="CREATORUSFLOW logo" width={34} height={34} style={{ display: 'block' }} />
               <span className="font-extrabold tracking-wide" style={{ fontSize: '1.15rem', letterSpacing: '0.04em' }}>
                 <span style={{ color: '#1B3A6B' }}>CREATORUS</span><span style={{ color: '#0EA5E9' }}>FLOW</span>
               </span>
@@ -151,7 +151,7 @@ export default function Layout({ children, title, description }) {
             {/* Brand */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <img src="/creatorusflow_icon.ico" alt="CREATORUSFLOW logo" width={30} height={30} style={{ display: 'block' }} />
+                <img src="/rounded_icon_big_logo.ico" alt="CREATORUSFLOW logo" width={30} height={30} style={{ display: 'block' }} />
                 <span className="font-extrabold tracking-wide" style={{ fontSize: '1.1rem', letterSpacing: '0.04em' }}>
                   <span style={{ color: '#60A5FA' }}>CREATORUS</span><span style={{ color: '#06B6D4' }}>FLOW</span>
                 </span>
