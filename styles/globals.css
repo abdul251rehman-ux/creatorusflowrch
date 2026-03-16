@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #F0F4FF;
+    color: #0D1526;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: rgba(123, 147, 255, 0.2);
+    color: #0D1526;
+  }
+
+  * {
+    border-color: rgba(123, 147, 255, 0.15);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    color: #0D1526;
+  }
+}
+
+/* ─── Components ────────────────────────────────────────── */
+@layer components {
+
+  /* Layout */
+  .section-padding {
+    @apply py-24 px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding-sm {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .section-alt {
+    background-color: #F8FAFF;
+  }
+
+  .section-deep {
+    background-color: #EEF2FF;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    transition: all 0.25s ease;
+    background: #7B93FF;
+    box-shadow: 0 4px 20px rgba(123, 147, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary:hover {
+    background: #6275E8;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(123, 147, 255, 0.4);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: #5B72D9;
+    transition: all 0.25s ease;
+    background: transparent;
+    border: 1.5px solid rgba(123, 147, 255, 0.4);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(123, 147, 255, 0.08);
+    border-color: rgba(123, 147, 255, 0.7);
+    color: #4A5FCA;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  /* ── Card ── */
+  .card {
+    background: #FFFFFF;
+    border: 1px solid rgba(123, 147, 255, 0.15);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(13, 21, 38, 0.06);
+  }
+
+  .card:hover {
+    border-color: rgba(123, 147, 255, 0.35);
+    box-shadow: 0 8px 32px rgba(123, 147, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* ── Hero ── */
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #F0F4FF;
+  }
+
+  .hero-bg {
+    position: relative;
+    overflow: hidden;
+    background-color: #F0F4FF;
+  }
+
+  /* ── Brand accent — used ONLY on the brand name ── */
+  .accent-text {
+    color: #7B93FF;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    background: rgba(123, 147, 255, 0.1);
+    border: 1px solid rgba(123, 147, 255, 0.25);
+    color: #5B72D9;
+  }
+
+  /* ── Form inputs ── */
+  .input-field {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    color: #0D1526;
+    transition: all 0.2s ease;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(123, 147, 255, 0.2);
+    outline: none;
+    appearance: none;
+  }
+
+  .input-field::placeholder {
+    color: #9CA3AF;
+  }
+
+  .input-field:focus {
+    border-color: rgba(123, 147, 255, 0.6);
+    box-shadow: 0 0 0 3px rgba(123, 147, 255, 0.1);
+  }
+
+  /* ── Decorative orbs ── */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(90px);
+    z-index: 0;
+  }
+
+  .orb-primary {
+    background: radial-gradient(circle, rgba(123, 147, 255, 0.18) 0%, transparent 70%);
+  }
+
+  .orb-neutral {
+    background: radial-gradient(circle, rgba(123, 147, 255, 0.08) 0%, transparent 70%);
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: rgba(123, 147, 255, 0.15);
+  }
+
+  /* ── Stat card ── */
+  .stat-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(123, 147, 255, 0.15);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(13, 21, 38, 0.05);
+  }
+
+  .stat-card:hover {
+    border-color: rgba(123, 147, 255, 0.35);
+    box-shadow: 0 8px 28px rgba(123, 147, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* ── Icon box ── */
+  .icon-box {
+    background: rgba(123, 147, 255, 0.08);
+    border: 1px solid rgba(123, 147, 255, 0.2);
+    color: #7B93FF;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ─── Utilities ─────────────────────────────────────────── */
+@layer utilities {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 8px rgba(13, 21, 38, 0.1);
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+  }
+}

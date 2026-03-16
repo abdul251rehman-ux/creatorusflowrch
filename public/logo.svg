@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="arcGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FF9A00"/>
+      <stop offset="35%" stop-color="#FF5577"/>
+      <stop offset="70%" stop-color="#CC44EE"/>
+      <stop offset="100%" stop-color="#6622FF"/>
+    </linearGradient>
+    <linearGradient id="fGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2244EE"/>
+      <stop offset="100%" stop-color="#00CCFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Arc depth layer -->
+  <path d="M 72 22 A 40 40 0 1 0 72 82" fill="none" stroke="url(#arcGrad)" stroke-width="16" stroke-linecap="round" opacity="0.18"/>
+  <!-- Arc mid layer -->
+  <path d="M 72 22 A 40 40 0 1 0 72 82" fill="none" stroke="url(#arcGrad)" stroke-width="11" stroke-linecap="round" opacity="0.35"/>
+  <!-- Arc main -->
+  <path d="M 72 22 A 40 40 0 1 0 72 82" fill="none" stroke="url(#arcGrad)" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- F vertical bar -->
+  <line x1="30" y1="25" x2="30" y2="75" stroke="url(#fGrad)" stroke-width="9" stroke-linecap="round"/>
+  <!-- F top horizontal -->
+  <line x1="30" y1="25" x2="52" y2="25" stroke="url(#fGrad)" stroke-width="9" stroke-linecap="round"/>
+  <!-- Arrow diagonal -->
+  <line x1="52" y1="25" x2="67" y2="10" stroke="#00CCFF" stroke-width="9" stroke-linecap="round"/>
+  <!-- Arrowhead triangle -->
+  <polygon points="65,6 77,6 77,18" fill="#00CCFF"/>
+  <!-- F middle bar -->
+  <line x1="30" y1="47" x2="52" y2="47" stroke="url(#fGrad)" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Large 4-point sparkle -->
+  <path d="M 74 9 L 75.5 5 L 77 9 L 81 10.5 L 77 12 L 75.5 16 L 74 12 L 70 10.5 Z" fill="#FFD700"/>
+  <!-- Small sparkle -->
+  <path d="M 83 4 L 84 2 L 85 4 L 87 5 L 85 6 L 84 8 L 83 6 L 81 5 Z" fill="#FFBB00"/>
+  <!-- Tiny dot sparkle -->
+  <circle cx="87" cy="15" r="1.5" fill="#FFD700"/>
+</svg>
