@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const services = [
   {
     name: 'TikTok',
-    brandColor: '#EE1D52',
+    brandColor: '#000000',
     color: 'from-pink-500 to-red-500',
     iconBg: 'rgba(236,72,153,0.1)',
     iconBorder: 'rgba(236,72,153,0.25)',
@@ -65,14 +65,14 @@ const services = [
   },
   {
     name: 'Snapchat',
-    brandColor: '#F7B731',
+    brandColor: '#FFFFFF',
     color: 'from-yellow-400 to-yellow-500',
-    iconBg: 'rgba(247,183,49,0.15)',
-    iconBorder: 'rgba(247,183,49,0.35)',
-    shadow: 'rgba(234,179,8,0.2)',
+    iconBg: '#FFFC00',
+    iconBorder: '#FFFC00',
+    shadow: 'rgba(255,252,0,0.35)',
     icon: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.317 4.184v.003c.089.05.26.12.507.12.3-.007.658-.12 1.03-.368.144-.09.298-.135.45-.135.135 0 .27.03.397.09.55.254.881.753.881 1.297 0 .57-.377 1.066-.962 1.267-.06.02-.124.038-.193.056-.626.161-1.38.484-1.48 1.065-.035.198.001.407.105.656.427 1.066 1.351 2.765 3.544 3.566.042.015.08.03.118.042.55.196.83.583.83 1.051 0 .588-.443 1.282-1.474 1.482-.12.024-.25.044-.39.064-.48.07-1.21.182-1.377.71-.094.3-.015.688.217 1.163.006.014.575.133.575.133.618.124 1.05.438 1.05.812 0 .5-.601.934-1.538.934-.19 0-.36-.018-.5-.046-.35-.07-.605-.154-.891-.226-.35-.088-.71-.165-1.099-.165-.414 0-.77.055-1.225.255-.86.38-1.695.575-2.484.575-.789 0-1.624-.195-2.484-.575-.455-.2-.81-.255-1.225-.255-.389 0-.75.077-1.1.165-.285.072-.54.156-.89.226-.14.028-.31.046-.5.046-.937 0-1.538-.434-1.538-.934 0-.374.432-.688 1.05-.812.576-.115.576-.133.576-.133.232-.475.311-.863.217-1.163-.168-.528-.897-.64-1.377-.71-.14-.02-.27-.04-.39-.064-1.031-.2-1.474-.894-1.474-1.482 0-.468.28-.855.83-1.051.038-.012.076-.027.118-.042 2.193-.8 3.117-2.5 3.544-3.566.104-.249.14-.458.105-.656-.1-.581-.854-.904-1.48-1.065-.069-.018-.133-.036-.193-.056-.585-.2-.962-.697-.962-1.267 0-.544.33-1.043.88-1.297.128-.06.263-.09.397-.09.153 0 .307.045.451.135.372.248.73.36 1.03.368.247 0 .418-.07.507-.12v-.003c-.086-.965-.212-2.99.317-4.184C7.859 1.069 11.216.793 12.206.793z" />
+      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" stroke="#000000" strokeWidth="0.4" strokeLinejoin="round">
+        <path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z" />
       </svg>
     ),
     shortDesc: 'Ephemeral content & real-time reach',
@@ -119,9 +119,10 @@ export default function Home() {
           className="absolute inset-0"
           style={{
             backgroundImage: 'url(/hero-image.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right center',
             backgroundRepeat: 'no-repeat',
+            backgroundColor: '#f0f4ff',
           }}
         />
 
@@ -129,7 +130,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, rgba(240,244,255,0.82) 0%, rgba(240,244,255,0.55) 40%, rgba(240,244,255,0) 68%)',
+            background: 'linear-gradient(to right, rgba(240,244,255,1) 0%, rgba(240,244,255,1) 38%, rgba(240,244,255,0.6) 52%, rgba(240,244,255,0) 65%)',
             zIndex: 1,
           }}
         />
@@ -137,12 +138,54 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 flex items-center" style={{ width: '52%', padding: '5rem 3rem 5rem 6vw' }}>
           <div>
-            {/* Badge */}
-            <div className="mb-6">
-              <span className="badge">
-                <span className="w-2 h-2 rounded-full bg-green-400" />
-                Trusted by 500+ creators worldwide
-              </span>
+            {/* Trust row */}
+            <div className="mb-6 flex items-center gap-3">
+              {/* Avatars */}
+              <div className="flex items-center">
+                {[
+                'https://randomuser.me/api/portraits/women/44.jpg',
+                'https://randomuser.me/api/portraits/men/32.jpg',
+                'https://randomuser.me/api/portraits/women/68.jpg',
+                'https://randomuser.me/api/portraits/men/75.jpg',
+                'https://randomuser.me/api/portraits/women/26.jpg',
+              ].map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt="client"
+                    width={36}
+                    height={36}
+                    style={{
+                      borderRadius: '50%',
+                      border: '2px solid #fff',
+                      marginLeft: i === 0 ? 0 : '-10px',
+                      boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
+                      display: 'block',
+                      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = 'translateY(-4px) scale(1.12)';
+                      e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.22)';
+                      e.currentTarget.style.zIndex = '10';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                      e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.15)';
+                      e.currentTarget.style.zIndex = '1';
+                    }}
+                  />
+                ))}
+              </div>
+              {/* Stars + text */}
+              <div>
+                <div className="flex gap-0.5 mb-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} width={14} height={14} viewBox="0 0 20 20" fill="#FBBF24"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  ))}
+                </div>
+                <p className="text-xs text-slate-600"><span className="font-bold text-slate-800">500+</span> creators trust us worldwide</p>
+              </div>
             </div>
 
             {/* Headline */}

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Logo from './Logo';
+import { useRouter } from 'next/router';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -14,6 +14,7 @@ const navLinks = [
 export default function Layout({ children, title, description }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -53,37 +54,51 @@ export default function Layout({ children, title, description }) {
 
       {/* ── Navigation ── */}
       <header
-        className="sticky top-0 z-50 transition-all duration-300 backdrop-blur-glass"
+        className="sticky top-0 z-50 transition-all duration-300"
         style={{
-          background: 'rgba(240,244,255,0.98)',
-          borderBottom: scrolled ? '1px solid rgba(123,147,255,0.2)' : '1px solid rgba(123,147,255,0.08)',
-          boxShadow: scrolled ? '0 4px 24px rgba(13,21,38,0.07)' : 'none',
+          background: scrolled ? 'rgba(13,21,38,0.98)' : 'rgba(13,21,38,0.95)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: scrolled ? '1px solid rgba(14,165,233,0.2)' : '1px solid rgba(255,255,255,0.06)',
+          boxShadow: scrolled ? '0 2px 24px rgba(0,0,0,0.3)' : 'none',
         }}
       >
-        <nav className="container-custom px-4 sm:px-6 lg:px-8 py-3.5">
+        <nav className="container-custom px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group" onClick={() => setMobileOpen(false)}>
-              <img src="/rounded_icon_big_logo.ico" alt="CREATORUSFLOW logo" width={34} height={34} style={{ display: 'block' }} />
+              <img src="/rounded_icon_big_logo.ico" alt="CREATORUSFLOW logo" width={36} height={36} style={{ display: 'block' }} />
               <span className="font-extrabold tracking-wide" style={{ fontSize: '1.15rem', letterSpacing: '0.04em' }}>
-                <span style={{ color: '#1B3A6B' }}>CREATORUS</span><span style={{ color: '#0EA5E9' }}>FLOW</span>
+                <span style={{ color: '#60A5FA' }}>CREATORUS</span><span style={{ color: '#06B6D4' }}>FLOW</span>
               </span>
             </Link>
 
             {/* Desktop nav */}
             <ul className="hidden md:flex items-center gap-1">
-              {navLinks.map(link => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="px-4 py-2 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-900 hover:bg-black/5 transition-all duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="ml-3">
-                <Link href="/contact" className="btn-primary !py-2.5 !px-5 !text-sm">
+              {navLinks.map(link => {
+                const isActive = router.pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                      style={{
+                        color: isActive ? '#38BDF8' : '#cbd5e1',
+                        background: isActive ? 'rgba(14,165,233,0.12)' : 'transparent',
+                        fontWeight: isActive ? 600 : 500,
+                      }}
+                      onMouseEnter={e => { if (!isActive) { e.currentTarget.style.color = '#ffffff'; e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; }}}
+                      onMouseLeave={e => { if (!isActive) { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.background = 'transparent'; }}}
+                    >
+                      {link.label}
+                      {isActive && (
+                        <span style={{ position: 'absolute', bottom: 2, left: '50%', transform: 'translateX(-50%)', width: '18px', height: '2.5px', borderRadius: '99px', background: '#0EA5E9', display: 'block' }} />
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+              <li className="ml-2">
+                <Link href="/contact" className="btn-primary !py-2 !px-5 !text-sm" style={{ background: 'linear-gradient(135deg, #1B3A6B 0%, #0EA5E9 100%)', boxShadow: '0 4px 14px rgba(14,165,233,0.35)' }}>
                   Get Started
                 </Link>
               </li>
