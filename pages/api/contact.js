@@ -20,14 +20,14 @@ export default async function handler(req, res) {
   });
 
   const mailOptions = {
-    from: `"CREATORUSFLOW Contact" <${process.env.GMAIL_USER}>`,
+    from: `"CREATORFLOWUS Contact" <${process.env.GMAIL_USER}>`,
     to: process.env.GMAIL_USER,
     replyTo: email,
     subject: `New Contact Form Submission — ${name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #f8faff; border-radius: 12px;">
         <h2 style="color: #0D1526; margin-bottom: 24px; border-bottom: 2px solid #7B93FF; padding-bottom: 12px;">
-          New Message from CREATORUSFLOW Website
+          New Message from CREATORFLOWUS Website
         </h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
           <p style="color: #0D1526; margin: 0; line-height: 1.6;">${message.replace(/\n/g, '<br/>')}</p>
         </div>
         <p style="margin-top: 20px; color: #94a3b8; font-size: 12px; text-align: center;">
-          Sent via creatorusflow.com contact form
+          Sent via creatorflowus.com contact form
         </p>
       </div>
     `,

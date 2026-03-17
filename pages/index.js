@@ -229,7 +229,19 @@ export default function Home() {
         <div className="container-custom section-padding-sm">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {stats.map((stat, i) => (
-              <div key={i} className="stat-card animate-on-scroll" style={{ transitionDelay: `${i * 60}ms` }}>
+              <div
+                key={i}
+                className="stat-card animate-on-scroll"
+                style={{ transitionDelay: `${i * 60}ms`, transition: 'box-shadow 0.25s ease, transform 0.25s ease' }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.boxShadow = '0 12px 40px rgba(13,21,38,0.55), 0 2px 8px rgba(13,21,38,0.35)';
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.boxShadow = '';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
                 <div className="text-2xl mb-2">{stat.icon}</div>
                 <div className="text-3xl font-extrabold text-slate-900 mb-1">{stat.value}</div>
                 <div className="text-xs text-slate-500 leading-tight">{stat.label}</div>
@@ -304,7 +316,7 @@ export default function Home() {
       <section className="section-deep section-padding">
         <div className="container-custom">
           <div className="text-center mb-14 animate-on-scroll">
-            <span className="badge mb-4">Why CREATORUSFLOW</span>
+            <span className="badge mb-4">Why CREATORFLOWUS</span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
               The Difference Is in the <span className="text-slate-900">Results</span>
             </h2>
@@ -340,7 +352,13 @@ export default function Home() {
                 desc: 'Growth without revenue is vanity. We integrate monetisation pathways from day one — brand deals, affiliate income, ad revenue, and product funnels.',
               },
             ].map((item, i) => (
-              <div key={i} className="card animate-on-scroll" style={{ transitionDelay: `${i * 100}ms` }}>
+              <div
+                key={i}
+                className="card animate-on-scroll"
+                style={{ transitionDelay: `${i * 100}ms`, transition: 'box-shadow 0.25s ease' }}
+                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(13,21,38,0.55), 0 2px 8px rgba(13,21,38,0.35)'; }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; }}
+              >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-slate-500"
                   style={{ background: 'rgba(123,147,255,0.08)', border: '1px solid rgba(123,147,255,0.2)' }}

@@ -49,7 +49,7 @@ const values = [
 
 export default function About() {
   return (
-    <Layout title="About Us" description="Learn about CREATORUSFLOW's mission, expert team, and proven approach to social media growth.">
+    <Layout title="About Us" description="Learn about CREATORFLOWUS's mission, expert team, and proven approach to social media growth.">
 
       {/* ── Hero ── */}
       <section className="hero-section section-padding relative" style={{ minHeight: '50vh', display: 'flex', alignItems: 'center' }}>
@@ -90,7 +90,7 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-4 animate-on-scroll">
               {stats.map((stat, i) => (
-                <div key={i} className="stat-card" style={{ transitionDelay: `${i * 80}ms` }}>
+                <div key={i} className="stat-card" style={{ transitionDelay: `${i * 80}ms`, transition: 'box-shadow 0.25s ease, transform 0.25s ease' }} onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 8px 28px rgba(13,21,38,0.13), 0 2px 8px rgba(13,21,38,0.08)'; e.currentTarget.style.transform = 'translateY(-3px)'; }} onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; e.currentTarget.style.transform = 'translateY(0)'; }}>
                   <div className="text-4xl font-extrabold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-sm text-slate-500">{stat.label}</div>
                 </div>

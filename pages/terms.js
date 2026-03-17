@@ -2,14 +2,14 @@ import Layout from '../components/Layout';
 
 export default function Terms() {
   return (
-    <Layout title="Terms & Conditions" description="CREATORUSFLOW's terms and conditions for our social media services">
+    <Layout title="Terms & Conditions" description="CREATORFLOWUS's terms and conditions for our social media services">
       <section className="hero-bg section-padding animate-on-scroll">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-900">
             Terms & Conditions
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            By using CREATORUSFLOW's services, you agree to the following terms and conditions.
+            By using CREATORFLOWUS's services, you agree to the following terms and conditions.
           </p>
         </div>
       </section>
@@ -33,14 +33,14 @@ export default function Terms() {
           <div className="card">
             <h2 className="text-3xl font-bold mb-4 text-slate-900">Liability</h2>
             <p className="text-slate-600 leading-relaxed">
-              CREATORUSFLOW is not liable for any indirect, incidental, or consequential damages arising from the use of our services.
+              CREATORFLOWUS is not liable for any indirect, incidental, or consequential damages arising from the use of our services.
             </p>
           </div>
 
           <div className="card">
             <h2 className="text-3xl font-bold mb-4 text-slate-900">Intellectual Property</h2>
             <p className="text-slate-600 leading-relaxed">
-              All content and materials provided by CREATORUSFLOW remain our intellectual property unless otherwise agreed.
+              All content and materials provided by CREATORFLOWUS remain our intellectual property unless otherwise agreed.
             </p>
           </div>
 
@@ -55,8 +55,8 @@ export default function Terms() {
             <h2 className="text-3xl font-bold mb-4 text-slate-900">Contact</h2>
             <p className="text-slate-600 leading-relaxed">
               For questions about these terms, contact us at{' '}
-              <a href="mailto:info@creatorusflow.com" className="text-slate-700 underline hover:text-slate-900 transition-colors">
-                info@creatorusflow.com
+              <a href="mailto:info@creatorflowus.com" className="text-slate-700 underline hover:text-slate-900 transition-colors">
+                info@creatorflowus.com
               </a>
               .
             </p>

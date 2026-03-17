@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    question: 'What services does CREATORUSFLOW offer?',
+    question: 'What services does CREATORFLOWUS offer?',
     answer: 'We provide comprehensive social media solutions including growth strategies, content creation, monetisation setup, automation tools, analytics, and community management for TikTok, YouTube, Instagram, Facebook, Snapchat, and Pinterest.',
   },
   {
@@ -28,7 +28,7 @@ const faqs = [
     answer: 'Both. Our team can develop complete content calendars, create engaging posts, edit videos, and optimise your existing content for better performance — or just handle strategy and management if you prefer to create your own content.',
   },
   {
-    question: 'What makes CREATORUSFLOW different from other agencies?',
+    question: 'What makes CREATORFLOWUS different from other agencies?',
     answer: "Our data-driven approach, proprietary automation tools, and focus on long-term sustainable growth set us apart. We don't just boost numbers — we build authentic communities and create lasting value for your brand.",
   },
   {
@@ -49,7 +49,7 @@ export default function FAQs() {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   return (
-    <Layout title="FAQs" description="Frequently asked questions about CREATORUSFLOW's social media growth services.">
+    <Layout title="FAQs" description="Frequently asked questions about CREATORFLOWUS's social media growth services.">
 
       {/* ── Hero ── */}
       <section className="hero-section section-padding relative" style={{ minHeight: '44vh', display: 'flex', alignItems: 'center' }}>
