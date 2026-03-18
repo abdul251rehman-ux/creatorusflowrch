@@ -136,7 +136,7 @@ ${formData.message}`
               </div>
 
               {/* Contact info 2×2 grid */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {contactInfo.map((item, i) => (
                   <div
                     key={i}
@@ -194,7 +194,7 @@ ${formData.message}`
                     <input
                       id="name" name="name" type="text"
                       value={formData.name} onChange={handleChange}
-                      required placeholder="Your full name"
+                      required placeholder="Your full name" autoComplete="name"
                       className={inputClass}
                     />
                   </div>
@@ -231,7 +231,7 @@ ${formData.message}`
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <button
                     type="submit"
                     disabled={status === 'sending'}

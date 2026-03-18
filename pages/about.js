@@ -59,7 +59,7 @@ export default function About() {
         <div className="container-custom relative z-10 w-full">
           <div className="text-center max-w-3xl mx-auto animate-on-scroll">
             <span className="badge mb-5">Our Story</span>
-            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
               We're the Team Behind{' '}
               <span className="text-slate-900">Your Growth</span>
             </h1>
@@ -73,7 +73,7 @@ export default function About() {
       {/* ── Mission + Stats ── */}
       <section className="section-alt section-padding">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="animate-on-scroll">
               <span className="badge mb-4">Our Mission</span>
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
@@ -103,9 +103,9 @@ export default function About() {
 {/* ── Values ── */}
       <section className="section-deep section-padding">
         <div className="container-custom">
-          <div className="text-center mb-14 animate-on-scroll">
+          <div className="text-center mb-8 md:mb-14 animate-on-scroll">
             <span className="badge mb-4">What We Stand For</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
               Our Core{' '}
               <span className="text-slate-900">Values</span>
             </h2>

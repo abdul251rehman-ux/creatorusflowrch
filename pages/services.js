@@ -216,7 +216,7 @@ export default function Services() {
       <section className="section-alt" style={{ padding: '3rem 1rem 3rem' }}>
         <div className="container-custom">
           {/* Tab bar */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="tabs-scroll flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 overflow-x-auto pb-2 md:pb-0 md:overflow-visible mb-6 md:mb-12">
             {Object.entries(platforms).map(([key, p]) => {
               const isActive = active === key;
               return (
@@ -242,7 +242,7 @@ export default function Services() {
                   <span style={{ color: isActive ? p.iconColor : '#94a3b8' }}>
                     <PlatformIcon platform={key} size={16} />
                   </span>
-                  <span className="hidden sm:inline">{p.label}</span>
+                  <span>{p.label}</span>
                 </button>
               );
             })}
@@ -251,9 +251,9 @@ export default function Services() {
           {/* Platform detail card */}
           <div className="card" key={active}>
             {/* Header */}
-            <div className="text-center mb-12 pb-10" style={{ borderBottom: '1px solid rgba(123,147,255,0.08)' }}>
+            <div className="text-center mb-6 pb-6 md:mb-12 md:pb-10" style={{ borderBottom: '1px solid rgba(123,147,255,0.08)' }}>
               <div
-                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto mb-5"
                 style={{ background: platform.iconBg || platform.bg, border: `1px solid ${platform.border}`, color: platform.iconColor }}
               >
                 <PlatformIcon platform={active} size={40} />
@@ -264,7 +264,7 @@ export default function Services() {
 
             {/* Automation highlight banner */}
             <div
-              className="flex items-start gap-4 rounded-2xl p-5 mb-10"
+              className="flex items-start gap-4 rounded-2xl p-5 mb-6 md:mb-10"
               style={{ background: `${platform.bg}`, border: `1.5px solid ${platform.border}` }}
             >
               <div
@@ -282,7 +282,7 @@ export default function Services() {
             </div>
 
             {/* Services + Features */}
-            <div className="grid md:grid-cols-2 gap-10 mb-12">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-10 mb-6 md:mb-12">
               {/* Core Services */}
               <div>
                 <h3 className="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
@@ -348,7 +348,7 @@ export default function Services() {
       <section className="section-padding">
         <div className="container-custom">
           <div
-            className="relative overflow-hidden rounded-3xl text-center p-12 animate-on-scroll"
+            className="relative overflow-hidden rounded-3xl text-center p-6 sm:p-8 md:p-12 animate-on-scroll"
             style={{
               background: 'linear-gradient(135deg, rgba(123,147,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(123,147,255,0.18)',

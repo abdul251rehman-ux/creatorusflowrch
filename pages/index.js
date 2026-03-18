@@ -116,7 +116,7 @@ export default function Home() {
       >
         {/* Full-bleed background photo */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hero-bg"
           style={{
             backgroundImage: 'url(/hero-image.png)',
             backgroundSize: 'contain',
@@ -128,7 +128,7 @@ export default function Home() {
 
         {/* Subtle left fade so text is crisp — image is already light on the left */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hero-overlay"
           style={{
             background: 'linear-gradient(to right, rgba(240,244,255,1) 0%, rgba(240,244,255,1) 38%, rgba(240,244,255,0.6) 52%, rgba(240,244,255,0) 65%)',
             zIndex: 1,
@@ -136,12 +136,12 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex items-center" style={{ width: '52%', padding: '5rem 3rem 5rem 6vw' }}>
+        <div className="relative z-10 flex items-center hero-content">
           <div>
             {/* Trust row */}
             <div className="mb-6 flex items-center gap-3">
               {/* Avatars */}
-              <div className="flex items-center">
+              <div className="flex items-center hero-avatars">
                 {[
                 'https://randomuser.me/api/portraits/women/44.jpg',
                 'https://randomuser.me/api/portraits/men/32.jpg',
@@ -189,7 +189,7 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-extrabold mb-5 leading-tight text-shadow" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.25rem)' }}>
+            <h1 className="font-extrabold mb-5 leading-tight text-shadow" style={{ fontSize: 'clamp(1.6rem, 4vw, 3.25rem)' }}>
               <span className="text-slate-900">Transform Your</span>{' '}
               <span style={{ color: '#0EA5E9' }}>Social Media</span>
               <br />
@@ -201,7 +201,7 @@ export default function Home() {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3 mb-8 hero-buttons">
               <Link href="/contact" className="btn-primary">
                 Get Free Strategy Session
               </Link>
@@ -212,7 +212,7 @@ export default function Home() {
 
             {/* Trust pill */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm text-slate-600"
+              className="inline-flex flex-wrap items-center gap-2 px-4 py-2 rounded-xl text-sm text-slate-600"
               style={{ background: 'rgba(14,165,233,0.07)', border: '1px solid rgba(14,165,233,0.2)' }}
             >
               <svg className="w-4 h-4 flex-shrink-0" style={{ color: '#0EA5E9' }} fill="currentColor" viewBox="0 0 20 20">
@@ -220,6 +220,14 @@ export default function Home() {
               </svg>
               No contracts · Results-guaranteed · 24/7 support
             </div>
+
+            {/* Mobile hero image — desktop uses background-image instead */}
+            <img
+              src="/hero-image.png"
+              alt="Social media creators"
+              className="block md:hidden mt-6 w-full h-auto rounded-2xl"
+              style={{ maxHeight: '280px', objectFit: 'contain' }}
+            />
           </div>
         </div>
       </section>
@@ -254,9 +262,9 @@ export default function Home() {
       {/* ── Services ─────────────────────────────────────── */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-14 animate-on-scroll">
+          <div className="text-center mb-8 md:mb-14 animate-on-scroll">
             <span className="badge mb-4">What We Do</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
               All Platforms, <span className="text-slate-900">One Agency</span>
             </h2>
             <p className="text-slate-500 max-w-xl mx-auto leading-relaxed">
@@ -302,7 +310,7 @@ export default function Home() {
 
                 <div className="flex flex-col flex-1" style={{ borderTop: '1px solid rgba(123,147,255,0.15)', paddingTop: '1rem' }}>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4" style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{service.details}</p>
-                  <Link href="/services" className="btn-secondary !py-2 !px-4 !text-sm">
+                  <Link href="/services" className="btn-secondary !py-3 !px-4 !text-sm">
                     View Full Services →
                   </Link>
                 </div>
@@ -315,9 +323,9 @@ export default function Home() {
       {/* ── Why Us ───────────────────────────────────────── */}
       <section className="section-deep section-padding">
         <div className="container-custom">
-          <div className="text-center mb-14 animate-on-scroll">
+          <div className="text-center mb-8 md:mb-14 animate-on-scroll">
             <span className="badge mb-4">Why CREATORFLOWUS</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
               The Difference Is in the <span className="text-slate-900">Results</span>
             </h2>
           </div>
@@ -377,7 +385,7 @@ export default function Home() {
       <section className="section-padding">
         <div className="container-custom">
           <div
-            className="relative overflow-hidden rounded-3xl text-center p-12 md:p-16 animate-on-scroll"
+            className="relative overflow-hidden rounded-3xl text-center p-6 sm:p-8 md:p-12 lg:p-16 animate-on-scroll"
             style={{
               background: 'rgba(123,147,255,0.05)',
               border: '1px solid rgba(123,147,255,0.18)',
@@ -388,10 +396,10 @@ export default function Home() {
             <div className="orb orb-orange" style={{ width: 350, height: 350, bottom: '-50%', right: '-5%', opacity: 0.4 }} />
 
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
                 Ready to Grow Your <span className="text-slate-900">Social Media?</span>
               </h2>
-              <p className="text-slate-600 text-lg mb-10 max-w-xl mx-auto">
+              <p className="text-slate-600 text-lg mb-6 md:mb-10 max-w-xl mx-auto">
                 Book a free 30-minute strategy call and see exactly how we'll grow your accounts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

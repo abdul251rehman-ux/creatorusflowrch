@@ -59,7 +59,7 @@ export default function FAQs() {
         <div className="container-custom relative z-10 w-full">
           <div className="text-center max-w-3xl mx-auto animate-on-scroll">
             <span className="badge mb-5">Got Questions?</span>
-            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
               Frequently Asked{' '}
               <span className="text-slate-900">Questions</span>
             </h1>
@@ -134,7 +134,7 @@ export default function FAQs() {
       <section className="section-padding">
         <div className="container-custom">
           <div
-            className="relative overflow-hidden rounded-3xl text-center p-12 md:p-16 animate-on-scroll"
+            className="relative overflow-hidden rounded-3xl text-center p-6 sm:p-8 md:p-12 lg:p-16 animate-on-scroll"
             style={{
               background: 'linear-gradient(135deg, rgba(123,147,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(123,147,255,0.18)',
