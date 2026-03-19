@@ -63,7 +63,7 @@ export default function About() {
               We're the Team Behind{' '}
               <span className="text-slate-900">Your Growth</span>
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               Empowering creators and businesses to dominate social media with innovative strategies, cutting-edge technology, and genuine care for your success.
             </p>
           </div>

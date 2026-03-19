@@ -41,7 +41,7 @@
 
   /* Layout */
   .section-padding {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8;
+    @apply py-8 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding-sm {
@@ -338,6 +338,18 @@
   .hero-avatars img {
     width: 28px !important;
     height: 28px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .stat-card {
+    padding: 1rem 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-section-wrap {
+    padding: 1.5rem 1rem !important;
   }
 }
 

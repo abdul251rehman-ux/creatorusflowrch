@@ -213,7 +213,7 @@ export default function Services() {
     <Layout title="Services" description="Comprehensive social media services for TikTok, YouTube, Instagram, Facebook, Snapchat, and Pinterest.">
 
       {/* ── Platform Tabs ── */}
-      <section className="section-alt" style={{ padding: '3rem 1rem 3rem' }}>
+      <section className="section-alt services-section-wrap" style={{ padding: '3rem 1rem 3rem' }}>
         <div className="container-custom">
           {/* Tab bar */}
           <div className="tabs-scroll flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 overflow-x-auto pb-2 md:pb-0 md:overflow-visible mb-6 md:mb-12">
@@ -317,7 +317,7 @@ export default function Services() {
                   </span>
                   Key Features
                 </h3>
-                <ul className="space-y-4">
+                <ul className="space-y-3 md:space-y-4">
                   {platform.features.map((feature, i) => (
                     <li
                       key={i}
@@ -333,7 +333,7 @@ export default function Services() {
                 </ul>
 
                 {/* CTA inside card */}
-                <div className="mt-8">
+                <div className="mt-5 md:mt-8">
                   <Link href="/contact" className="btn-primary w-full text-center block">
                     Get Started with {platform.label} →
                   </Link>

@@ -136,7 +136,7 @@ ${formData.message}`
               </div>
 
               {/* Contact info 2×2 grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {contactInfo.map((item, i) => (
                   <div
                     key={i}

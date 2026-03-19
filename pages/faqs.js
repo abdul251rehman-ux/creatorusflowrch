@@ -63,7 +63,7 @@ export default function FAQs() {
               Frequently Asked{' '}
               <span className="text-slate-900">Questions</span>
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               Everything you need to know about our services, pricing, and how we work.
             </p>
           </div>

@@ -368,12 +368,12 @@ export default function Home() {
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; }}
               >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-slate-500"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 md:mb-5 text-slate-500"
                   style={{ background: 'rgba(123,147,255,0.08)', border: '1px solid rgba(123,147,255,0.2)' }}
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-2 md:mb-3">{item.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
