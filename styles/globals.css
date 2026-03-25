@@ -283,26 +283,18 @@
   scrollbar-width: none;
   overscroll-behavior-x: contain;
 }
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .tabs-scroll {
     flex-wrap: wrap !important;
     overflow-x: visible !important;
     justify-content: center !important;
   }
   .tabs-scroll button {
-    flex: 0 0 calc(33.33% - 0.5rem) !important;
-    font-size: 0.75rem !important;
-    padding: 0.65rem 0.25rem !important;
-  }
-}
-@media (max-width: 360px) {
-  .tabs-scroll button {
     flex: 0 0 calc(50% - 0.5rem) !important;
-  }
-}
-@media (min-width: 641px) and (max-width: 767px) {
-  .tabs-scroll button {
+    font-size: 0.8rem !important;
+    padding: 0.65rem 0.5rem !important;
     min-height: 44px !important;
+    justify-content: center !important;
   }
 }
 
@@ -348,8 +340,33 @@
 }
 
 @media (max-width: 767px) {
+  .why-us-grid > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .why-us-grid .card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
   .services-section-wrap {
     padding: 1.5rem 1rem !important;
+  }
+  .automation-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .services-tile-grid .card {
+    padding: 0.625rem !important;
+    align-items: center !important;
+  }
+  .feature-item {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
   }
 }
 

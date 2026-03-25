@@ -96,12 +96,30 @@ const services = [
 ];
 
 const stats = [
-  { value: '20+', label: 'Countries Served', icon: '🌍' },
-  { value: '98%', label: 'Client Satisfaction', icon: '⭐' },
-  { value: '5M+', label: 'Followers Generated', icon: '📈' },
-  { value: '$2M+', label: 'Revenue Monetised', icon: '💰' },
-  { value: '500+', label: 'Projects Completed', icon: '✅' },
-  { value: '24/7', label: 'Support Available', icon: '🛡️' },
+  {
+    value: '20+', label: 'Countries Served',
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+  },
+  {
+    value: '98%', label: 'Client Satisfaction',
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>,
+  },
+  {
+    value: '5M+', label: 'Followers Generated',
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>,
+  },
+  {
+    value: '$2M+', label: 'Revenue Monetised',
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
+  },
+  {
+    value: '500+', label: 'Projects Completed',
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>,
+  },
+  {
+    value: '24/7', label: 'Support Available',
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+  },
 ];
 
 export default function Home() {
@@ -189,19 +207,19 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-extrabold mb-5 leading-tight text-shadow" style={{ fontSize: 'clamp(1.6rem, 4vw, 3.25rem)' }}>
+            <h1 className="font-extrabold mb-3 md:mb-5 leading-tight text-shadow" style={{ fontSize: 'clamp(1.6rem, 4vw, 3.25rem)' }}>
               <span className="text-slate-900">Transform Your</span>{' '}
               <span style={{ color: '#0EA5E9' }}>Social Media</span>
               <br />
               <span className="text-slate-900">Into a Revenue Machine</span>
             </h1>
 
-            <p className="text-slate-600 mb-8 leading-relaxed" style={{ fontSize: '1.05rem', maxWidth: '420px' }}>
+            <p className="text-slate-600 mb-4 md:mb-8 leading-relaxed" style={{ fontSize: '1.05rem', maxWidth: '420px' }}>
               Expert strategies for explosive growth and monetisation on TikTok, YouTube, Instagram, Facebook, and more.
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-3 mb-8 hero-buttons">
+            <div className="flex flex-wrap gap-3 mb-4 md:mb-8 hero-buttons">
               <Link href="/contact" className="btn-primary">
                 Get Free Strategy Session
               </Link>
@@ -250,7 +268,7 @@ export default function Home() {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <div className="text-2xl mb-2">{stat.icon}</div>
+                <div className="w-8 h-8 mb-2 mx-auto" style={{ color: '#7B93FF' }}>{stat.icon}</div>
                 <div className="text-3xl font-extrabold text-slate-900 mb-1">{stat.value}</div>
                 <div className="text-xs text-slate-500 leading-tight">{stat.label}</div>
               </div>
@@ -272,15 +290,17 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="services-tile-grid grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5">
             {services.map((service, i) => (
-              <div
+              <Link
                 key={i}
-                className="card group animate-on-scroll flex flex-col"
+                href={`/services?p=${service.name.toLowerCase()}`}
+                className="card group animate-on-scroll flex flex-col items-center md:items-start text-center md:text-left"
                 style={{
                   transitionDelay: `${i * 70}ms`,
                   boxShadow: `0 4px 20px ${service.shadow}`,
                   borderColor: service.iconBorder,
+                  textDecoration: 'none',
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.boxShadow = `0 8px 32px ${service.shadow.replace(/[\d.]+\)$/, '0.32)')}`;
@@ -293,29 +313,37 @@ export default function Home() {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                {/* Icon + name row */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: service.iconBg, border: `1px solid ${service.iconBorder}` }}
-                  >
-                    <span style={{ color: service.brandColor, display: 'flex' }}>
-                      {service.icon}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900">{service.name}</h3>
+                {/* Icon */}
+                <div
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center flex-shrink-0 mb-2 md:mb-0"
+                  style={{ background: service.iconBg, border: `1px solid ${service.iconBorder}` }}
+                >
+                  <span style={{ color: service.brandColor, display: 'flex' }}>
+                    {service.icon}
+                  </span>
                 </div>
 
-                <p className="text-slate-500 text-sm leading-relaxed mb-4">{service.shortDesc}</p>
+                {/* Name */}
+                <h3 className="text-xs md:text-lg font-bold text-slate-900 leading-tight md:mt-0 md:ml-0 mt-0">{service.name}</h3>
 
-                <div className="flex flex-col flex-1" style={{ borderTop: '1px solid rgba(123,147,255,0.15)', paddingTop: '1rem' }}>
+                {/* Hidden on mobile */}
+                <p className="hidden md:block text-slate-500 text-sm leading-relaxed mt-3 mb-4">{service.shortDesc}</p>
+
+                <div className="hidden md:flex flex-col flex-1 w-full" style={{ borderTop: '1px solid rgba(123,147,255,0.15)', paddingTop: '1rem' }}>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4" style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{service.details}</p>
-                  <Link href="/services" className="btn-secondary !py-3 !px-4 !text-sm">
+                  <Link href="/services" className="btn-secondary !py-3 !px-4 !text-sm" onClick={e => e.stopPropagation()}>
                     View Full Services →
                   </Link>
                 </div>
-              </div>
+              </Link>
             ))}
+          </div>
+
+          {/* Mobile CTA below grid */}
+          <div className="md:hidden mt-4 text-center">
+            <Link href="/services" className="btn-secondary !text-sm">
+              View All Services →
+            </Link>
           </div>
         </div>
       </section>
@@ -330,7 +358,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="why-us-grid grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {[
               {
                 icon: (
@@ -373,8 +401,8 @@ export default function Home() {
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 md:mb-3">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-sm md:text-lg font-bold text-slate-900 mb-2 md:mb-3">{item.title}</h3>
+                <p className="hidden md:block text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

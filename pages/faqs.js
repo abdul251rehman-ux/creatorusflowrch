@@ -89,7 +89,7 @@ export default function FAQs() {
                   }}
                 >
                   <button
-                    className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
+                    className="w-full text-left px-4 md:px-6 py-3.5 md:py-5 flex justify-between items-center gap-4"
                     onClick={() => setOpenFAQ(isOpen ? null : i)}
                     aria-expanded={isOpen}
                   >
@@ -118,7 +118,7 @@ export default function FAQs() {
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6">
+                    <div className="px-4 md:px-6 pb-4 md:pb-6">
                       <div className="divider mb-4" />
                       <p className="text-slate-600 text-sm leading-relaxed">{faq.answer}</p>
                     </div>

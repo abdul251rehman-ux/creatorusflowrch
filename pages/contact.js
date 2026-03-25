@@ -121,7 +121,7 @@ ${formData.message}`
     <Layout title="Contact" description="Get in touch with CREATORFLOWUS for a free strategy session on your social media growth.">
 
       {/* ── Main content ── */}
-      <section className="section-alt" style={{ padding: '2.5rem 1rem 3.5rem' }}>
+      <section className="section-alt" style={{ padding: '2rem 1rem 2rem' }}>
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 items-start">
 
@@ -135,26 +135,24 @@ ${formData.message}`
                 </p>
               </div>
 
-              {/* Contact info 2×2 grid */}
-              <div className="grid grid-cols-2 gap-3">
+              {/* Contact info — full width rows */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {contactInfo.map((item, i) => (
                   <div
                     key={i}
-                    className="card !p-4 flex gap-3 items-start"
-                    style={{ transition: 'box-shadow 0.25s ease' }}
-                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 10px 36px rgba(13,21,38,0.5), 0 2px 8px rgba(13,21,38,0.3)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; }}
+                    className="flex items-center justify-center gap-3 px-4 py-4 rounded-2xl"
+                    style={{ background: '#fff', border: '1px solid rgba(123,147,255,0.15)', boxShadow: '0 2px 8px rgba(13,21,38,0.05)' }}
                   >
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-slate-500 mt-0.5"
+                      className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-slate-500"
                       style={{ background: 'rgba(123,147,255,0.08)', border: '1px solid rgba(123,147,255,0.15)' }}
                     >
-                      <span className="scale-75">{item.icon}</span>
+                      {item.icon}
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-0.5">{item.label}</div>
-                      <div className="text-slate-900 text-sm font-semibold truncate">{item.value}</div>
-                      <div className="text-slate-400 text-xs">{item.sub}</div>
+                    <div>
+                      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wide leading-none mb-1">{item.label}</div>
+                      <div className="text-slate-900 text-sm font-semibold leading-snug break-words">{item.value}</div>
+                      <div className="text-slate-400 text-xs mt-0.5">{item.sub}</div>
                     </div>
                   </div>
                 ))}
@@ -185,10 +183,10 @@ ${formData.message}`
 
             {/* ── Right: Form ── */}
             <div>
-              <form className="card !p-6" onSubmit={handleSubmit} style={{ transition: 'box-shadow 0.25s ease' }} onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 10px 36px rgba(13,21,38,0.5), 0 2px 8px rgba(13,21,38,0.3)'; }} onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; }}>
-                <h2 className="text-xl font-extrabold text-slate-900 mb-5">Send Us a Message</h2>
+              <form className="card !p-4 md:!p-6" onSubmit={handleSubmit} style={{ transition: 'box-shadow 0.25s ease' }} onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 10px 36px rgba(13,21,38,0.5), 0 2px 8px rgba(13,21,38,0.3)'; }} onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; }}>
+                <h2 className="text-xl font-extrabold text-slate-900 mb-3 md:mb-5">Send Us a Message</h2>
 
-                <div className="grid sm:grid-cols-2 gap-3 mb-3">
+                <div className="grid grid-cols-2 gap-3 mb-3">
                   <div>
                     <label htmlFor="name" className="block text-xs font-medium text-slate-500 mb-1.5">Full Name *</label>
                     <input
@@ -218,7 +216,7 @@ ${formData.message}`
                   </div>
                 </div>
 
-                <div className="mb-4">
+                <div className="mb-3">
                   <label htmlFor="message" className="block text-xs font-medium text-slate-500 mb-1.5">Message *</label>
                   <textarea
                     id="message" name="message"
@@ -231,7 +229,7 @@ ${formData.message}`
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3">
                   <button
                     type="submit"
                     disabled={status === 'sending'}

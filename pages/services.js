@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 // Official brand SVG icons
 const PlatformIcon = ({ platform, size = 18 }) => {
@@ -208,6 +209,12 @@ const platforms = {
 export default function Services() {
   const [active, setActive] = useState('tiktok');
   const platform = platforms[active];
+  const router = useRouter();
+
+  useEffect(() => {
+    const p = router.query.p;
+    if (p && platforms[p]) setActive(p);
+  }, [router.query.p]);
 
   return (
     <Layout title="Services" description="Comprehensive social media services for TikTok, YouTube, Instagram, Facebook, Snapchat, and Pinterest.">
@@ -253,18 +260,18 @@ export default function Services() {
             {/* Header */}
             <div className="text-center mb-6 pb-6 md:mb-12 md:pb-10" style={{ borderBottom: '1px solid rgba(123,147,255,0.08)' }}>
               <div
-                className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto mb-5"
+                className="w-12 h-12 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-5"
                 style={{ background: platform.iconBg || platform.bg, border: `1px solid ${platform.border}`, color: platform.iconColor }}
               >
-                <PlatformIcon platform={active} size={40} />
+                <PlatformIcon platform={active} size={28} />
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">{platform.title}</h2>
-              <p className="text-slate-500 max-w-xl mx-auto leading-relaxed">{platform.description}</p>
+              <h2 className="text-xl md:text-4xl font-extrabold text-slate-900 mb-2 md:mb-3">{platform.title}</h2>
+              <p className="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">{platform.description}</p>
             </div>
 
             {/* Automation highlight banner */}
             <div
-              className="flex items-start gap-4 rounded-2xl p-5 mb-6 md:mb-10"
+              className="flex items-start gap-3 rounded-2xl p-3 md:p-5 mb-6 md:mb-10"
               style={{ background: `${platform.bg}`, border: `1.5px solid ${platform.border}` }}
             >
               <div
@@ -277,26 +284,26 @@ export default function Services() {
               </div>
               <div>
                 <p className="text-sm font-bold mb-1" style={{ color: platform.activeText }}>Automation — Our Core Advantage</p>
-                <p className="text-sm text-slate-600 leading-relaxed">{platform.automation}</p>
+                <p className="automation-text text-xs md:text-sm text-slate-600 leading-relaxed">{platform.automation}</p>
               </div>
             </div>
 
             {/* Services + Features */}
-            <div className="grid md:grid-cols-2 gap-6 md:gap-10 mb-6 md:mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-10 mb-6 md:mb-12">
               {/* Core Services */}
               <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                <h3 className="text-sm md:text-lg font-bold text-slate-900 mb-2 md:mb-5 flex items-center gap-1 md:gap-2">
                   <span
-                    className="w-6 h-6 rounded-md flex items-center justify-center text-xs"
+                    className="w-5 h-5 md:w-6 md:h-6 rounded-md flex items-center justify-center text-xs flex-shrink-0"
                     style={{ background: 'rgba(123,147,255,0.1)', border: '1px solid rgba(123,147,255,0.25)', color: '#7B93FF' }}
                   >
                     ✦
                   </span>
                   Core Services
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {platform.services.map((service, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm">
+                    <li key={i} className="flex items-start gap-2 text-xs md:text-sm">
                       <svg className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
@@ -308,24 +315,24 @@ export default function Services() {
 
               {/* Key Features */}
               <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                <h3 className="text-sm md:text-lg font-bold text-slate-900 mb-2 md:mb-5 flex items-center gap-1 md:gap-2">
                   <span
-                    className="w-6 h-6 rounded-md flex items-center justify-center text-xs"
+                    className="w-5 h-5 md:w-6 md:h-6 rounded-md flex items-center justify-center text-xs flex-shrink-0"
                     style={{ background: 'rgba(123,147,255,0.1)', border: '1px solid rgba(123,147,255,0.25)', color: '#7B93FF' }}
                   >
                     ★
                   </span>
                   Key Features
                 </h3>
-                <ul className="space-y-3 md:space-y-4">
+                <ul className="space-y-2 md:space-y-4">
                   {platform.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 rounded-xl p-4 text-sm"
+                      className="feature-item flex items-start gap-3 rounded-xl p-4 text-sm"
                       style={{ background: 'rgba(123,147,255,0.04)', border: '1px solid rgba(123,147,255,0.1)' }}
                     >
-                      <svg className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      <svg className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-slate-600">{feature}</span>
                     </li>
@@ -357,10 +364,10 @@ export default function Services() {
             <div className="orb orb-primary" style={{ width: 300, height: 300, top: '-50%', left: '0%', opacity: 0.5 }} />
             <div className="orb orb-orange" style={{ width: 300, height: 300, bottom: '-50%', right: '0%', opacity: 0.4 }} />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-3 md:mb-4">
                 Not Sure Where to <span className="text-slate-900">Start?</span>
               </h2>
-              <p className="text-slate-600 mb-8 max-w-lg mx-auto">
+              <p className="text-slate-600 mb-5 md:mb-8 max-w-lg mx-auto">
                 Book a free strategy session and we'll identify the best platforms and services for your specific goals.
               </p>
               <Link href="/contact" className="btn-primary">

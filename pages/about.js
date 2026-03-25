@@ -80,10 +80,10 @@ export default function About() {
                 Democratising Social Media{' '}
                 <span className="text-slate-900">Success</span>
               </h2>
-              <p className="text-slate-600 leading-relaxed mb-6">
+              <p className="text-slate-600 leading-relaxed mb-3 md:mb-6 text-sm md:text-base">
                 We believe everyone deserves the opportunity to build meaningful connections and monetise their passion. Our mission is to democratise social media success by providing accessible, data-driven solutions that transform ordinary accounts into extraordinary brands.
               </p>
-              <p className="text-slate-500 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed text-sm md:text-base">
                 Founded by creators for creators, we combine deep platform expertise with enterprise-grade analytics to deliver results that speak for themselves.
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {values.map((value, i) => (
               <div
                 key={i}
