@@ -44,9 +44,28 @@ export default function Layout({ children, title, description }) {
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={description || 'Expert social media growth strategies for creators and businesses.'} />
+        <meta name="description" content={description || 'Expert social media growth strategies for creators and businesses. CREATORFLOWUS helps creators and brands dominate TikTok, YouTube, Instagram, Facebook, and more.'} />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/creatorusflow_icon.ico" />
+        <link rel="shortcut icon" href="/creatorusflow_icon.ico" />
+
+        {/* Open Graph (Google / social previews) */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.creatorflowus.com/" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description || 'Expert social media growth strategies for creators and businesses. CREATORFLOWUS helps creators and brands dominate TikTok, YouTube, Instagram, Facebook, and more.'} />
+        <meta property="og:image" content="https://www.creatorflowus.com/creatorusflow_icon.ico" />
+        <meta property="og:site_name" content="CREATORFLOWUS" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description || 'Expert social media growth strategies for creators and businesses.'} />
+        <meta name="twitter:image" content="https://www.creatorflowus.com/creatorusflow_icon.ico" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
