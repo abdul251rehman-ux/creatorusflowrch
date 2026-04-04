@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { Analytics } from '@vercel/analytics/next';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -375,6 +376,7 @@ export default function Layout({ children, title, description }) {
           </div>
         </div>
       </footer>
+      <Analytics />
     </>
   );
 }
