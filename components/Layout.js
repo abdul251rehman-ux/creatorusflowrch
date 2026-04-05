@@ -51,20 +51,69 @@ export default function Layout({ children, title, description }) {
         {/* Favicon */}
         <link rel="icon" href="/creatorusflow_icon.ico" />
         <link rel="shortcut icon" href="/creatorusflow_icon.ico" />
+        <link rel="apple-touch-icon" href="/creatorusflow_icon.ico" />
 
-        {/* Open Graph (Google / social previews) */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.creatorflowus.com/" />
+        <meta property="og:url" content={`https://www.creatorflowus.com${router.asPath}`} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description || 'Expert social media growth strategies for creators and businesses. CREATORFLOWUS helps creators and brands dominate TikTok, YouTube, Instagram, Facebook, and more.'} />
-        <meta property="og:image" content="https://www.creatorflowus.com/creatorusflow_icon.ico" />
+        <meta property="og:image" content="https://www.creatorflowus.com/logo.svg" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:site_name" content="CREATORFLOWUS" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description || 'Expert social media growth strategies for creators and businesses.'} />
-        <meta name="twitter:image" content="https://www.creatorflowus.com/creatorusflow_icon.ico" />
+        <meta name="twitter:image" content="https://www.creatorflowus.com/logo.svg" />
+
+        {/* Schema.org JSON-LD — tells Google exactly who we are, our logo, description */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.creatorflowus.com/#organization",
+                  "name": "CREATORFLOWUS",
+                  "url": "https://www.creatorflowus.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "@id": "https://www.creatorflowus.com/#logo",
+                    "url": "https://www.creatorflowus.com/logo.svg",
+                    "contentUrl": "https://www.creatorflowus.com/logo.svg",
+                    "width": 512,
+                    "height": 512,
+                    "caption": "CREATORFLOWUS"
+                  },
+                  "image": { "@id": "https://www.creatorflowus.com/#logo" },
+                  "description": "Expert social media growth strategies for creators and businesses. CREATORFLOWUS helps creators and brands dominate TikTok, YouTube, Instagram, Facebook, and more.",
+                  "email": "info@creatorflowus.com",
+                  "telephone": "+447735390061",
+                  "sameAs": [
+                    "https://www.tiktok.com/@creatorflowus",
+                    "https://youtube.com/@creatorflowus",
+                    "https://www.instagram.com/creatorflowus1/",
+                    "https://www.facebook.com/creatorflowus/"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.creatorflowus.com/#website",
+                  "url": "https://www.creatorflowus.com",
+                  "name": "CREATORFLOWUS",
+                  "description": "Expert social media growth strategies for creators and businesses.",
+                  "publisher": { "@id": "https://www.creatorflowus.com/#organization" },
+                  "inLanguage": "en-US"
+                }
+              ]
+            })
+          }}
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
