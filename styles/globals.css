@@ -370,6 +370,30 @@
   }
 }
 
+/* ─── Blog Prose ────────────────────────────────────────────── */
+.prose { @apply max-w-none; }
+.prose h1 { @apply text-3xl font-extrabold text-slate-900 mt-10 mb-4 leading-tight; }
+.prose h2 { @apply text-2xl font-bold text-slate-900 mt-8 mb-3 leading-tight; }
+.prose h3 { @apply text-xl font-semibold text-slate-900 mt-6 mb-2; }
+.prose h4 { @apply text-lg font-semibold text-slate-800 mt-4 mb-2; }
+.prose p { @apply text-slate-700 leading-relaxed mb-5 text-base; }
+.prose ul { @apply list-disc pl-6 mb-5 text-slate-700 space-y-1; }
+.prose ol { @apply list-decimal pl-6 mb-5 text-slate-700 space-y-1; }
+.prose li { @apply text-slate-700 leading-relaxed; }
+.prose blockquote { @apply border-l-4 pl-5 py-1 italic text-slate-600 mb-5 bg-slate-50 rounded-r-lg; border-color: rgba(123,147,255,0.5); }
+.prose code { @apply px-1.5 py-0.5 rounded text-sm font-mono text-slate-800; background: rgba(123,147,255,0.08); }
+.prose pre { @apply bg-slate-900 text-slate-100 p-5 rounded-xl mb-5 overflow-x-auto; }
+.prose pre code { @apply bg-transparent p-0 text-slate-100; }
+.prose a { color: #7B93FF; text-decoration: underline; }
+.prose a:hover { color: #5B72D9; }
+.prose img { @apply rounded-xl w-full h-auto my-6; }
+.prose strong { @apply font-semibold text-slate-900; }
+.prose em { @apply italic; }
+.prose hr { @apply my-8; border-color: rgba(123,147,255,0.2); }
+.prose table { @apply w-full border-collapse mb-5; }
+.prose th { @apply text-left p-3 text-sm font-semibold text-slate-700 border-b; }
+.prose td { @apply p-3 text-sm text-slate-600 border-b; border-color: rgba(123,147,255,0.1); }
+
 /* ─── Safe area insets (iPhone notch / home bar) ── */
 @supports (padding: env(safe-area-inset-bottom)) {
   footer {

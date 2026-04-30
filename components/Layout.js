@@ -7,6 +7,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Blog' },
   { href: '/faqs', label: 'FAQs' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -267,6 +268,7 @@ export default function Layout({ children, title, description }) {
                     { href: '/', label: 'Home' },
                     { href: '/services', label: 'Services' },
                     { href: '/about', label: 'About Us' },
+                    { href: '/blog', label: 'Blog' },
                     { href: '/faqs', label: 'FAQs' },
                   ].map(link => (
                     <li key={link.href}>
@@ -345,6 +347,7 @@ export default function Layout({ children, title, description }) {
                   { href: '/', label: 'Home' },
                   { href: '/services', label: 'Services' },
                   { href: '/about', label: 'About Us' },
+                  { href: '/blog', label: 'Blog' },
                   { href: '/faqs', label: 'FAQs' },
                   { href: '/privacy', label: 'Privacy Policy' },
                   { href: '/terms', label: 'Terms & Conditions' },
