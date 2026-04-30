@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog Admin Guide — CreatorFlowUS</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8faff; color: #0D1526; font-size: 14px; line-height: 1.6; }
+
+  /* ── Cover Page ── */
+  .cover { background: #080E1C; color: #fff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; page-break-after: always; }
+  .cover-logo { width: 72px; height: 72px; background: rgba(123,147,255,0.14); border: 1px solid rgba(123,147,255,0.28); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; }
+  .cover h1 { font-size: 2.6rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+  .cover h1 span { color: #7B93FF; }
+  .cover p { color: #64748b; font-size: 1rem; max-width: 460px; margin: 0 auto 2.5rem; }
+  .cover-meta { background: rgba(123,147,255,0.08); border: 1px solid rgba(123,147,255,0.18); border-radius: 14px; padding: 1.25rem 2rem; display: inline-flex; gap: 2.5rem; }
+  .cover-meta div { text-align: center; }
+  .cover-meta .val { font-size: 1.4rem; font-weight: 800; color: #7B93FF; }
+  .cover-meta .key { font-size: 0.72rem; color: #475569; text-transform: uppercase; letter-spacing: 0.08em; }
+  .cover-url { margin-top: 2rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 0.6rem 1.2rem; display: inline-block; font-size: 0.9rem; color: #94a3b8; letter-spacing: 0.02em; }
+  .cover-url strong { color: #7B93FF; }
+
+  /* ── Layout ── */
+  .page { max-width: 800px; margin: 0 auto; padding: 2.5rem 2rem; page-break-before: always; }
+  .page:first-of-type { page-break-before: auto; }
+
+  /* ── Section headings ── */
+  .step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(123,147,255,0.15); }
+  .step-num { width: 40px; height: 40px; border-radius: 12px; background: #7B93FF; color: #fff; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-header h2 { font-size: 1.3rem; font-weight: 800; color: #0D1526; }
+  .step-header p { font-size: 0.82rem; color: #64748b; margin-top: 2px; }
+
+  /* ── Screen mockup ── */
+  .mockup { background: #fff; border: 1.5px solid rgba(123,147,255,0.2); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(13,21,38,0.08); margin-bottom: 1.75rem; }
+  .mockup-bar { background: #f1f5f9; border-bottom: 1px solid #e2e8f0; padding: 8px 14px; display: flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #fc5f57; }
+  .dot-y { background: #fdbc2c; }
+  .dot-g { background: #34c749; }
+  .url-bar { flex: 1; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem; color: #64748b; margin-left: 8px; }
+  .mockup-body { padding: 1.5rem; }
+
+  /* ── PIN screen mockup ── */
+  .pin-wrap { background: #080E1C; border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .pin-icon { width: 52px; height: 52px; background: rgba(123,147,255,0.12); border: 1px solid rgba(123,147,255,0.25); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+  .pin-title { color: #fff; font-size: 1.1rem; font-weight: 800; }
+  .pin-sub { color: #475569; font-size: 0.78rem; }
+  .pin-box { background: rgba(255,255,255,0.05); border: 1.5px solid rgba(123,147,255,0.18); border-radius: 12px; padding: 1.25rem 1.5rem; width: 100%; max-width: 320px; }
+  .pin-label { color: #64748b; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .pin-input { background: rgba(255,255,255,0.06); border: 1.5px solid rgba(123,147,255,0.18); border-radius: 10px; padding: 10px 14px; color: #94a3b8; font-size: 1.1rem; letter-spacing: 0.3em; width: 100%; margin-bottom: 10px; }
+  .pin-btn { background: #7B93FF; color: #fff; border-radius: 10px; padding: 10px; width: 100%; font-weight: 700; font-size: 0.9rem; text-align: center; }
+
+  /* ── Dashboard mockup ── */
+  .dash-topbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid rgba(123,147,255,0.12); margin-bottom: 1rem; }
+  .dash-title { font-size: 1rem; font-weight: 800; color: #0D1526; }
+  .dash-sub { font-size: 0.7rem; color: #94a3b8; }
+  .new-btn { background: #7B93FF; color: #fff; border-radius: 8px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1rem; }
+  .stat-card { background: rgba(123,147,255,0.04); border: 1px solid rgba(123,147,255,0.12); border-radius: 10px; padding: 10px 12px; }
+  .stat-val { font-size: 1.1rem; font-weight: 800; color: #0D1526; }
+  .stat-label { font-size: 0.68rem; color: #94a3b8; margin-top: 1px; }
+  .filter-tabs { display: flex; gap: 4px; margin-bottom: 1rem; flex-wrap: wrap; }
+  .ftab { padding: 4px 12px; border-radius: 9999px; font-size: 0.73rem; font-weight: 600; border: 1px solid rgba(123,147,255,0.15); color: #64748b; }
+  .ftab.active { background: rgba(123,147,255,0.1); border-color: rgba(123,147,255,0.3); color: #5B72D9; }
+  .blog-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(123,147,255,0.07); }
+  .blog-thumb { width: 44px; height: 36px; background: rgba(123,147,255,0.08); border-radius: 7px; flex-shrink: 0; overflow: hidden; }
+  .blog-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .blog-info { flex: 1; min-width: 0; }
+  .blog-name { font-size: 0.82rem; font-weight: 700; color: #0D1526; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .blog-cat { font-size: 0.68rem; color: #64748b; }
+  .status-badge { padding: 2px 9px; border-radius: 9999px; font-size: 0.68rem; font-weight: 700; white-space: nowrap; }
+  .s-published { background: rgba(16,185,129,0.1); color: #059669; }
+  .s-draft { background: rgba(245,158,11,0.1); color: #d97706; }
+  .s-review { background: rgba(139,92,246,0.12); color: #7c3aed; }
+  .s-scheduled { background: rgba(6,182,212,0.1); color: #0891b2; }
+  .s-archived { background: rgba(100,116,139,0.1); color: #64748b; }
+  .row-actions { display: flex; gap: 5px; flex-shrink: 0; }
+  .act-btn { width: 28px; height: 28px; border-radius: 7px; border: 1px solid rgba(123,147,255,0.15); background: transparent; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #64748b; cursor: pointer; }
+
+  /* ── Form panel ── */
+  .panel { background: #fff; border: 1.5px solid rgba(123,147,255,0.2); border-radius: 16px; overflow: hidden; }
+  .panel-header { padding: 12px 16px; border-bottom: 1px solid rgba(123,147,255,0.1); display: flex; align-items: center; justify-content: space-between; }
+  .panel-title { font-size: 0.9rem; font-weight: 800; color: #0D1526; }
+  .panel-sub { font-size: 0.68rem; color: #94a3b8; }
+  .panel-tabs { display: flex; border-bottom: 1px solid rgba(123,147,255,0.1); }
+  .ptab { flex: 1; padding: 8px; text-align: center; font-size: 0.73rem; font-weight: 600; color: #64748b; border-bottom: 2.5px solid transparent; }
+  .ptab.active { color: #7B93FF; border-bottom-color: #7B93FF; font-weight: 700; }
+  .panel-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+  .field-label { font-size: 0.68rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
+  .req { color: #f87171; }
+  .field-input { width: 100%; padding: 9px 12px; border-radius: 9px; border: 1.5px solid rgba(123,147,255,0.18); background: #F8FAFF; color: #0D1526; font-size: 0.875rem; }
+  .field-textarea { width: 100%; padding: 9px 12px; border-radius: 9px; border: 1.5px solid rgba(123,147,255,0.18); background: #F8FAFF; color: #0D1526; font-size: 0.875rem; min-height: 80px; resize: vertical; }
+  .field-hint { font-size: 0.68rem; color: #94a3b8; margin-top: 3px; }
+  .slug-prefix { position: relative; }
+  .slug-pre { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 0.75rem; color: #94a3b8; }
+  .slug-input { padding-left: 52px !important; }
+  .panel-footer { padding: 10px 16px; border-top: 1px solid rgba(123,147,255,0.1); display: flex; align-items: center; gap: 8px; }
+  .status-pill { display: flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; flex: 1; }
+  .cancel-btn { padding: 8px 16px; border-radius: 9px; border: 1.5px solid rgba(123,147,255,0.22); background: transparent; color: #5B72D9; font-size: 0.82rem; font-weight: 600; }
+  .save-btn { padding: 8px 20px; border-radius: 9px; background: #7B93FF; color: #fff; font-size: 0.82rem; font-weight: 700; box-shadow: 0 4px 14px rgba(123,147,255,0.3); }
+
+  /* ── Field description cards ── */
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+  .field-card { background: #fff; border: 1px solid rgba(123,147,255,0.15); border-radius: 12px; padding: 12px 14px; }
+  .field-card-name { font-size: 0.78rem; font-weight: 800; color: #0D1526; display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .field-card-name .badge-req { background: rgba(239,68,68,0.08); color: #ef4444; font-size: 0.65rem; padding: 1px 6px; border-radius: 9999px; font-weight: 700; }
+  .field-card-name .badge-opt { background: rgba(148,163,184,0.1); color: #94a3b8; font-size: 0.65rem; padding: 1px 6px; border-radius: 9999px; font-weight: 600; }
+  .field-card p { font-size: 0.75rem; color: #64748b; line-height: 1.5; }
+
+  /* ── Status descriptions ── */
+  .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+  .status-card { border-radius: 12px; padding: 12px 14px; border: 1px solid; }
+  .status-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 3px; }
+  .status-card p { font-size: 0.73rem; line-height: 1.5; }
+
+  /* ── Tips ── */
+  .tip { display: flex; gap: 10px; background: rgba(123,147,255,0.05); border: 1px solid rgba(123,147,255,0.15); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+  .tip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .tip h4 { font-size: 0.8rem; font-weight: 700; color: #0D1526; margin-bottom: 3px; }
+  .tip p { font-size: 0.73rem; color: #475569; line-height: 1.5; }
+  .tip.warning { background: rgba(245,158,11,0.05); border-color: rgba(245,158,11,0.2); }
+  .tip.success { background: rgba(16,185,129,0.05); border-color: rgba(16,185,129,0.2); }
+
+  /* ── Toggle row ── */
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #F8FAFF; border: 1px solid rgba(123,147,255,0.12); border-radius: 10px; margin-bottom: 8px; }
+  .toggle-info h4 { font-size: 0.8rem; font-weight: 700; color: #0D1526; }
+  .toggle-info p { font-size: 0.7rem; color: #94a3b8; }
+  .toggle-visual { width: 38px; height: 22px; border-radius: 11px; background: #cbd5e1; position: relative; flex-shrink: 0; }
+  .toggle-visual.on { background: #7B93FF; }
+  .toggle-knob { width: 16px; height: 16px; background: #fff; border-radius: 50%; position: absolute; top: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+  .toggle-visual.on .toggle-knob { left: 19px; }
+  .toggle-visual:not(.on) .toggle-knob { left: 3px; }
+
+  /* ── Google preview ── */
+  .google-prev { border: 1px solid rgba(0,0,0,0.12); border-radius: 10px; padding: 12px 14px; background: #fff; font-family: Arial, sans-serif; }
+  .google-prev .g-url { font-size: 0.7rem; color: #202124; opacity: 0.6; margin-bottom: 2px; }
+  .google-prev .g-title { font-size: 1rem; color: #1a0dab; font-weight: 400; margin-bottom: 3px; }
+  .google-prev .g-desc { font-size: 0.8rem; color: #4d5156; line-height: 1.5; }
+
+  /* ── Image upload zone ── */
+  .upload-zone { border: 2px dashed rgba(123,147,255,0.25); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 6px; color: #94a3b8; background: rgba(123,147,255,0.02); text-align: center; margin-bottom: 8px; }
+  .upload-zone .upload-icon { width: 38px; height: 38px; background: rgba(123,147,255,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .upload-zone p { font-size: 0.78rem; color: #475569; font-weight: 600; margin: 0; }
+  .upload-zone span { font-size: 0.7rem; }
+
+  /* ── Markdown cheat sheet ── */
+  .md-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1.5rem; }
+  .md-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; background: #F8FAFF; border-radius: 8px; border: 1px solid rgba(123,147,255,0.1); }
+  .md-code { background: rgba(123,147,255,0.08); border: 1px solid rgba(123,147,255,0.15); padding: 2px 7px; border-radius: 5px; font-size: 0.72rem; color: #5B72D9; font-family: monospace; }
+  .md-result { font-size: 0.75rem; color: #475569; }
+
+  /* ── Page break ── */
+  @media print {
+    .cover { min-height: 100vh; }
+    .page { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+  }
+
+  h3 { font-size: 0.95rem; font-weight: 800; color: #0D1526; margin: 1.5rem 0 0.75rem; }
+  hr { border: none; border-top: 1px solid rgba(123,147,255,0.12); margin: 1.5rem 0; }
+  .text-muted { font-size: 0.78rem; color: #64748b; line-height: 1.6; margin-bottom: 1rem; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .two-col, .field-grid, .status-grid, .md-grid, .stats-row, .cover-meta { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════ COVER -->
+<div class="cover">
+  <div class="cover-logo">✍️</div>
+  <h1>Blog Admin<br/><span>User Guide</span></h1>
+  <p>Complete step-by-step guide to publishing and managing blog posts on CreatorFlowUS.</p>
+  <div class="cover-meta">
+    <div><div class="val">4</div><div class="key">Simple Steps</div></div>
+    <div><div class="val">4</div><div class="key">Form Tabs</div></div>
+    <div><div class="val">5</div><div class="key">Post Statuses</div></div>
+  </div>
+  <div class="cover-url">Go to: <strong>creatorflowus.com/admin/blog</strong></div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ STEP 1: LOGIN -->
+<div class="page">
+  <div class="step-header">
+    <div class="step-num">1</div>
+    <div>
+      <h2>Logging In — PIN Screen</h2>
+      <p>Every visit to the admin page starts here. Enter your PIN to access the dashboard.</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-bar">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      <span class="url-bar">creatorflowus.com/admin/blog</span>
+    </div>
+    <div class="mockup-body" style="background:#080E1C;">
+      <div class="pin-wrap">
+        <div class="pin-icon">🔒</div>
+        <div class="pin-title">Admin Access</div>
+        <div class="pin-sub">Enter your PIN to access the dashboard</div>
+        <div class="pin-box">
+          <div class="pin-label">PIN Code</div>
+          <div class="pin-input">••••</div>
+          <div class="pin-btn">Enter Dashboard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">🔑</div>
+    <div>
+      <h4>Your PIN</h4>
+      <p>You will be given a 4-digit PIN by your developer. Type it in and press <strong>Enter Dashboard</strong>. Your session stays active in the browser tab — you won't need to re-enter it unless you close the tab or click Logout.</p>
+    </div>
+  </div>
+  <div class="tip warning">
+    <div class="tip-icon">⚠️</div>
+    <div>
+      <h4>Wrong PIN?</h4>
+      <p>You will see a red message: <em>"Incorrect PIN. Please try again."</em> — simply type the correct PIN and try again. There is no lockout.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ STEP 2: DASHBOARD -->
+<div class="page">
+  <div class="step-header">
+    <div class="step-num">2</div>
+    <div>
+      <h2>The Dashboard — Blog Manager</h2>
+      <p>Overview of all your posts, quick stats, and filters.</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-bar">
+      <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+      <span class="url-bar">creatorflowus.com/admin/blog</span>
+    </div>
+    <div class="mockup-body">
+      <div class="dash-topbar">
+        <div>
+          <div class="dash-title">Blog Manager</div>
+          <div class="dash-sub">3 posts · 1 published</div>
+        </div>
+        <div class="new-btn">＋ New Post</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card"><div class="stat-val">3</div><div class="stat-label">Total Posts</div></div>
+        <div class="stat-card"><div class="stat-val">1</div><div class="stat-label">Published</div></div>
+        <div class="stat-card"><div class="stat-val">2</div><div class="stat-label">Drafts</div></div>
+      </div>
+      <div class="filter-tabs">
+        <span class="ftab active">All</span>
+        <span class="ftab">Published</span>
+        <span class="ftab">Draft</span>
+        <span class="ftab">Review</span>
+        <span class="ftab">Scheduled</span>
+      </div>
+      <div class="blog-row">
+        <div class="blog-thumb" style="background:rgba(249,115,22,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">📱</div>
+        <div class="blog-info"><div class="blog-name">How to Grow on Instagram in 2025</div><div class="blog-cat">Social Media</div></div>
+        <span class="status-badge s-published">Published</span>
+        <div class="row-actions"><span class="act-btn">✏️</span><span class="act-btn">🗑</span></div>
+      </div>
+      <div class="blog-row">
+        <div class="blog-thumb" style="background:rgba(123,147,255,0.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🎬</div>
+        <div class="blog-info"><div class="blog-name">TikTok Content Strategy for Brands</div><div class="blog-cat">Content Creation</div></div>
+        <span class="status-badge s-draft">Draft</span>
+        <div class="row-actions"><span class="act-btn">✏️</span><span class="act-btn">🗑</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Dashboard Areas Explained</h3>
+  <div class="field-grid">
+    <div class="field-card">
+      <div class="field-card-name">📊 Stat Cards</div>
+      <p>Shows Total Posts, Published, Drafts, In Review, Scheduled, and Archived — always up to date.</p>
+    </div>
+    <div class="field-card">
+      <div class="field-card-name">🔍 Filter Tabs</div>
+      <p>Click <strong>All, Published, Draft, Review, Scheduled, Archived</strong> to filter the list below.</p>
+    </div>
+    <div class="field-card">
+      <div class="field-card-name">✏️ Edit button</div>
+      <p>Opens the full edit form for that post with all current data pre-filled.</p>
+    </div>
+    <div class="field-card">
+      <div class="field-card-name">🗑 Delete button</div>
+      <p>Asks for confirmation then permanently removes the post. This cannot be undone.</p>
+    </div>
+    <div class="field-card">
+      <div class="field-card-name">★ Featured toggle</div>
+      <p>Click the star on any post in the list to instantly mark/unmark it as featured without opening the form.</p>
+    </div>
+    <div class="field-card">
+      <div class="field-card-name">＋ New Post</div>
+      <p>Blue button in the top right. Opens a blank form to create a brand-new post.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ STEP 3: THE FORM -->
+<div class="page">
+  <div class="step-header">
+    <div class="step-num">3</div>
+    <div>
+      <h2>Writing a Post — The Form</h2>
+      <p>The form has 4 tabs. Work through them left to right.</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-bar">
+      <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+      <span class="url-bar">creatorflowus.com/admin/blog</span>
+    </div>
+    <div class="mockup-body" style="padding:0;">
+      <div class="panel" style="border:none;border-radius:0;">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">New Post</div>
+            <div class="panel-sub">Fill in the details below</div>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <div style="padding:5px 10px;border-radius:7px;border:1.5px solid rgba(123,147,255,0.22);font-size:0.73rem;color:#5B72D9;font-weight:700;">👁 Preview</div>
+            <div style="width:28px;height:28px;border-radius:7px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">✕</div>
+          </div>
+        </div>
+        <div class="panel-tabs">
+          <div class="ptab active">✏️ Content</div>
+          <div class="ptab">🖼 Media</div>
+          <div class="ptab">☰ Details</div>
+          <div class="ptab">🔍 SEO</div>
+        </div>
+        <div class="panel-body">
+          <div>
+            <div class="field-label">📄 Title <span class="req">*</span></div>
+            <div class="field-input" style="color:#94a3b8;">Your blog post title…</div>
+          </div>
+          <div>
+            <div class="field-label">🔗 Slug <span class="req">*</span></div>
+            <div class="slug-prefix" style="position:relative;">
+              <span class="slug-pre">/blog/</span>
+              <div class="field-input slug-input" style="color:#94a3b8;padding-left:52px;">url-friendly-slug</div>
+            </div>
+          </div>
+          <div>
+            <div class="field-label">📄 Excerpt</div>
+            <div class="field-textarea" style="color:#94a3b8;display:flex;align-items:flex-start;padding-top:9px;">Short summary for listings and SEO…</div>
+          </div>
+          <div>
+            <div class="field-label">✏️ Content (Markdown) <span class="req">*</span></div>
+            <div class="field-textarea" style="min-height:60px;color:#94a3b8;font-family:monospace;font-size:0.82rem;"># Heading&#10;&#10;Write in **markdown**…</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="status-pill" style="background:rgba(245,158,11,0.1);color:#d97706;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#f59e0b;display:inline-block;margin-right:3px;"></span> Draft
+          </div>
+          <div class="cancel-btn">Cancel</div>
+          <div class="save-btn">✓ Save Post</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ TAB 1: CONTENT -->
+<div class="page">
+  <h3>Tab 1 — Content</h3>
+  <p class="text-muted">This is the most important tab. Fill this out first. Fields marked <span style="color:#ef4444;font-weight:700;">*</span> are required — the post will not save without them.</p>
+
+  <div class="field-grid">
+    <div class="field-card no-break">
+      <div class="field-card-name">Title <span class="badge-req">Required</span></div>
+      <p>The main headline of your blog post. Keep it clear and descriptive.<br/><em>Example: "How to Grow on Instagram in 2025"</em></p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Slug <span class="badge-req">Required</span></div>
+      <p>The URL of your post. <strong>Auto-fills from your title</strong> — you don't need to type it. It will look like:<br/><em>creatorflowus.com/blog/how-to-grow-on-instagram</em></p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Excerpt <span class="badge-opt">Optional</span></div>
+      <p>A short 1–2 sentence summary. Shown on the blog listing page under the title. Also used in Google search results if you don't fill in the SEO description.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Content (Markdown) <span class="badge-req">Required</span></div>
+      <p>The full article. Written in Markdown format (see cheat sheet below). Click the <strong>Preview</strong> button in the top-right to see how it looks formatted.</p>
+    </div>
+  </div>
+
+  <h3>Markdown Cheat Sheet — Writing Your Content</h3>
+  <p class="text-muted">Markdown is a simple way to format text. Here are the most common commands:</p>
+  <div class="md-grid">
+    <div class="md-row"><span class="md-code"># Heading 1</span><span class="md-result" style="font-size:1rem;font-weight:800;">Big Title</span></div>
+    <div class="md-row"><span class="md-code">## Heading 2</span><span class="md-result" style="font-size:0.9rem;font-weight:700;">Sub Title</span></div>
+    <div class="md-row"><span class="md-code">**bold text**</span><span class="md-result"><strong>bold text</strong></span></div>
+    <div class="md-row"><span class="md-code">*italic text*</span><span class="md-result"><em>italic text</em></span></div>
+    <div class="md-row"><span class="md-code">- item one</span><span class="md-result">• item one</span></div>
+    <div class="md-row"><span class="md-code">1. First item</span><span class="md-result">1. First item</span></div>
+    <div class="md-row"><span class="md-code">> blockquote</span><span class="md-result" style="border-left:3px solid #7B93FF;padding-left:6px;color:#475569;">blockquote</span></div>
+    <div class="md-row"><span class="md-code">`inline code`</span><span class="md-result" style="background:#f1f5f9;padding:1px 5px;border-radius:4px;font-family:monospace;font-size:0.8rem;">code</span></div>
+    <div class="md-row"><span class="md-code">[link text](url)</span><span class="md-result" style="color:#1a0dab;text-decoration:underline;">link text</span></div>
+    <div class="md-row"><span class="md-code">---</span><span class="md-result">────────── divider</span></div>
+  </div>
+
+  <div class="tip success">
+    <div class="tip-icon">💡</div>
+    <div>
+      <h4>Pro Tip — Use the Preview button</h4>
+      <p>After writing your content, click <strong>Preview</strong> (top right of the form) to see it rendered as it will appear on the website. Click <strong>Edit</strong> to go back to writing.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ TAB 2: MEDIA -->
+<div class="page">
+  <h3>Tab 2 — Media</h3>
+  <p class="text-muted">Add images for your post. The cover image appears at the top of the post and as the thumbnail on the blog listing page.</p>
+
+  <div class="mockup" style="margin-bottom:1.5rem;">
+    <div class="mockup-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span></div>
+    <div class="mockup-body">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <div class="field-label" style="margin:0;">🖼 Cover Image</div>
+        <div style="display:flex;gap:3px;background:#F0F4FF;border-radius:7px;padding:2px;border:1px solid rgba(123,147,255,0.12);">
+          <div style="padding:3px 10px;border-radius:5px;background:#fff;font-size:0.7rem;font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,0.08);">⬆ Upload</div>
+          <div style="padding:3px 10px;border-radius:5px;font-size:0.7rem;font-weight:600;color:#64748b;">🔗 URL</div>
+        </div>
+      </div>
+      <div class="upload-zone">
+        <div class="upload-icon">⬆️</div>
+        <p>Click to upload</p>
+        <span>PNG, JPG, WebP — max 10 MB</span>
+      </div>
+      <div style="margin-top:1rem;">
+        <div class="field-label">📄 Cover Image Alt Text</div>
+        <div class="field-input" style="color:#94a3b8;">Describe the image for screen readers…</div>
+        <div class="field-hint">Improves accessibility and SEO image indexing</div>
+      </div>
+      <div style="margin-top:1rem;">
+        <div class="field-label">🖼 Open Graph Image <span style="color:#94a3b8;font-size:0.68rem;font-weight:400;text-transform:none;letter-spacing:0;">optional</span></div>
+        <div class="field-input" style="color:#94a3b8;">https://… (1200×630 recommended)</div>
+        <div class="field-hint">Overrides the cover image for Twitter, Facebook, and LinkedIn shares</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-grid">
+    <div class="field-card no-break">
+      <div class="field-card-name">Cover Image — Upload tab <span class="badge-opt">Optional</span></div>
+      <p>Click the dashed area or the <strong>Upload Image</strong> button to pick a file from your computer. Accepted formats: PNG, JPG, WebP. Max size: 10 MB. The image is automatically saved to the website's storage.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Cover Image — URL tab <span class="badge-opt">Optional</span></div>
+      <p>If you already have an image hosted somewhere (Unsplash, Google Drive public link, etc.), switch to the <strong>URL</strong> tab, paste the link, wait for the preview to show <em>"Ready"</em>, then click <strong>Use Image</strong>.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Cover Image Alt Text <span class="badge-opt">Optional</span></div>
+      <p>A short description of the image. Used by screen readers and helps Google understand what the image is.<br/><em>Example: "Person scrolling Instagram on a phone"</em></p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Open Graph Image <span class="badge-opt">Optional</span></div>
+      <p>A separate image shown when someone shares your post on Twitter, Facebook, or LinkedIn. Recommended size: <strong>1200 × 630 pixels</strong>. If left blank, the cover image is used instead.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">📐</div>
+    <div>
+      <h4>Best image size for Cover Images</h4>
+      <p>Use a landscape image at least <strong>1200px wide</strong>. The cover displays at a 16:9 ratio on the post page and 3:2 on the listing grid. JPG or WebP format gives the best quality at smallest file size.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ TAB 3: DETAILS -->
+<div class="page">
+  <h3>Tab 3 — Details</h3>
+  <p class="text-muted">Set the status, category, author, tags, and extra options for the post.</p>
+
+  <h3 style="margin-top:0;">Status</h3>
+  <p class="text-muted">Choose where this post is in its lifecycle. This controls whether it's visible to the public.</p>
+
+  <div class="status-grid">
+    <div class="status-card" style="background:rgba(245,158,11,0.05);border-color:rgba(245,158,11,0.25);color:#d97706;">
+      <h4>🟡 Draft</h4>
+      <p style="color:#475569;">Saved but <strong>not visible</strong> to the public. Use this while writing. The default for new posts.</p>
+    </div>
+    <div class="status-card" style="background:rgba(139,92,246,0.06);border-color:rgba(139,92,246,0.25);color:#7c3aed;">
+      <h4>🟣 Review</h4>
+      <p style="color:#475569;">Ready to be checked before publishing. Still <strong>not visible</strong> to the public.</p>
+    </div>
+    <div class="status-card" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.25);color:#0891b2;">
+      <h4>🔵 Scheduled</h4>
+      <p style="color:#475569;">Set a future date and time. The post goes <strong>live automatically</strong> at that moment.</p>
+    </div>
+    <div class="status-card" style="background:rgba(16,185,129,0.06);border-color:rgba(16,185,129,0.25);color:#059669;">
+      <h4>🟢 Published</h4>
+      <p style="color:#475569;"><strong>Live on the website right now.</strong> Visible to everyone at creatorflowus.com/blog.</p>
+    </div>
+  </div>
+  <div class="status-card" style="background:rgba(100,116,139,0.06);border-color:rgba(100,116,139,0.2);color:#64748b;border-radius:12px;padding:12px 14px;margin-bottom:1.5rem;">
+    <h4>⚫ Archived</h4>
+    <p style="color:#475569;">Hidden from the public blog listing. The post still exists but is no longer visible. Use this instead of deleting.</p>
+  </div>
+
+  <div class="field-grid">
+    <div class="field-card no-break">
+      <div class="field-card-name">Category <span class="badge-opt">Optional</span></div>
+      <p>Choose from your pre-set categories (e.g. Social Media, Content Creation). Shows as a coloured badge on the post and listing page. Select from the dropdown.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Author <span class="badge-opt">Optional</span></div>
+      <p>Select who wrote the post from the dropdown. Their name, photo, and bio will appear on the published post automatically.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Tags <span class="badge-opt">Optional</span></div>
+      <p>Keywords that describe the post. Type them separated by commas.<br/><em>Example: instagram, growth, reels, 2025</em><br/>They appear as coloured chips at the bottom of the post.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Language <span class="badge-opt">Optional</span></div>
+      <p>The language the post is written in. Defaults to <strong>English</strong>. Change only if writing in another language.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Series Name + Part # <span class="badge-opt">Optional</span></div>
+      <p>If this post is part of a series, enter the series name and which part number it is.<br/><em>Example: Series — "TikTok Masterclass", Part — 2</em></p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Scheduled Publish Date</div>
+      <p>Only appears when Status is set to <strong>Scheduled</strong>. Pick the exact date and time for the post to go live.</p>
+    </div>
+  </div>
+
+  <h3>Toggles</h3>
+  <div class="toggle-row">
+    <div class="toggle-info"><h4>⭐ Featured Post</h4><p>Highlighted with a "★ Featured" badge on the blog listing and post page.</p></div>
+    <div class="toggle-visual on"><div class="toggle-knob"></div></div>
+  </div>
+  <div class="toggle-row">
+    <div class="toggle-info"><h4>🛡 Premium Content</h4><p>Gated — only visible to subscribers. Use for exclusive content.</p></div>
+    <div class="toggle-visual"><div class="toggle-knob"></div></div>
+  </div>
+  <div class="toggle-row">
+    <div class="toggle-info"><h4>💬 Allow Comments</h4><p>Lets readers leave comments on this post. On by default.</p></div>
+    <div class="toggle-visual on"><div class="toggle-knob"></div></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ TAB 4: SEO -->
+<div class="page">
+  <h3>Tab 4 — SEO</h3>
+  <p class="text-muted">Controls how your post appears in Google search results. All fields are optional — if left blank, the post title and excerpt are used automatically.</p>
+
+  <div class="mockup" style="margin-bottom:1.5rem;">
+    <div class="mockup-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span></div>
+    <div class="mockup-body">
+      <div style="background:rgba(123,147,255,0.05);border:1px solid rgba(123,147,255,0.12);border-radius:10px;padding:10px 12px;margin-bottom:1rem;display:flex;gap:8px;align-items:flex-start;">
+        <span>🔍</span>
+        <p style="font-size:0.75rem;color:#475569;margin:0;line-height:1.5;">SEO fields override the title and excerpt in search results. Leave blank to use post defaults.</p>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+          <div class="field-label" style="margin:0;">🔍 SEO Title</div>
+          <span style="font-size:0.68rem;color:#10b981;font-weight:700;">54/60</span>
+        </div>
+        <div class="field-input">How to Grow on Instagram in 2025 | CreatorFlowUS</div>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+          <div class="field-label" style="margin:0;">📄 Meta Description</div>
+          <span style="font-size:0.68rem;color:#10b981;font-weight:700;">142/160</span>
+        </div>
+        <div class="field-textarea" style="min-height:60px;">Discover proven strategies to grow your Instagram account in 2025, from Reels to hashtags.</div>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <div class="field-label">Google Preview</div>
+        <div class="google-prev">
+          <div class="g-url">creatorflowus.com › blog › grow-on-instagram-2025</div>
+          <div class="g-title">How to Grow on Instagram in 2025 | CreatorFlowUS</div>
+          <div class="g-desc">Discover proven strategies to grow your Instagram account in 2025, from Reels to hashtags and everything in between.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-grid">
+    <div class="field-card no-break">
+      <div class="field-card-name">SEO Title <span class="badge-opt">Optional</span></div>
+      <p>What appears as the blue clickable link in Google. Keep it under <strong>60 characters</strong>. The counter turns green when you're at the ideal length.<br/><em>Example: "Grow on Instagram in 2025 | CreatorFlowUS"</em></p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Meta Description <span class="badge-opt">Optional</span></div>
+      <p>The grey text shown below the title in Google results. Keep it under <strong>160 characters</strong>. Should describe what the reader will learn.<br/><em>Example: "Learn 10 proven strategies to grow your Instagram account in 2025 — from Reels to hashtags."</em></p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Canonical URL <span class="badge-opt">Optional</span></div>
+      <p>Only needed if this post was originally published somewhere else (e.g. your Medium or LinkedIn). Paste the original URL here so Google knows where the content came from. Leave blank for original posts.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Hide from Search Engines <span class="badge-opt">Toggle</span></div>
+      <p>Turn this ON to tell Google <strong>not to index</strong> this post. Use for test posts, internal drafts that accidentally got published, or pages you don't want in search results.</p>
+    </div>
+  </div>
+
+  <div class="tip success">
+    <div class="tip-icon">🔍</div>
+    <div>
+      <h4>Google Preview — Live as you type</h4>
+      <p>At the bottom of the SEO tab, you'll see a live Google Preview card that shows exactly how your post will appear in search results. It updates as you type the SEO Title and Meta Description.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ STEP 4: SAVE & PUBLISH -->
+<div class="page">
+  <div class="step-header">
+    <div class="step-num">4</div>
+    <div>
+      <h2>Saving &amp; Publishing</h2>
+      <p>Once all tabs are filled in, save the post and control when it goes live.</p>
+    </div>
+  </div>
+
+  <h3>The Footer Bar</h3>
+  <p class="text-muted" style="margin-bottom:1rem;">At the bottom of the form you always see three things:</p>
+
+  <div class="mockup" style="margin-bottom:1.5rem;">
+    <div class="mockup-body" style="padding:0;">
+      <div class="panel-footer" style="border-top:1px solid rgba(123,147,255,0.12);">
+        <div class="status-pill" style="background:rgba(16,185,129,0.1);color:#059669;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;margin-right:3px;"></span> Published
+        </div>
+        <div class="cancel-btn">Cancel</div>
+        <div class="save-btn">✓ Save Post</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-grid" style="margin-bottom:1.5rem;">
+    <div class="field-card no-break">
+      <div class="field-card-name">Status pill (left)</div>
+      <p>Shows the current status in colour. You set this in the <strong>Details</strong> tab. When status is Published, this pill is green — that means the post will go live the moment you click Save.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Cancel button</div>
+      <p>Closes the form without saving anything. Any unsaved changes will be lost.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Save Post / Update Post button</div>
+      <p>Saves everything. The button shows <strong>Save Post</strong> for new posts and <strong>Update Post</strong> when editing an existing one. You'll see a green toast notification at the top of the screen when it succeeds.</p>
+    </div>
+    <div class="field-card no-break">
+      <div class="field-card-name">Required fields</div>
+      <p>If you click Save without filling in <strong>Title</strong>, <strong>Slug</strong>, or <strong>Content</strong>, a red error message appears at the top of the form. Fill in the missing fields and try again.</p>
+    </div>
+  </div>
+
+  <h3>Quick Publish Checklist</h3>
+  <div class="tip">
+    <div class="tip-icon">✅</div>
+    <div>
+      <h4>Before clicking Save Post, check:</h4>
+      <p>
+        ☐ <strong>Title</strong> is filled in<br/>
+        ☐ <strong>Content</strong> is written and previewed<br/>
+        ☐ <strong>Excerpt</strong> added (helps SEO and listing page)<br/>
+        ☐ <strong>Cover Image</strong> uploaded or URL set<br/>
+        ☐ <strong>Category</strong> selected<br/>
+        ☐ <strong>Author</strong> selected<br/>
+        ☐ <strong>Status</strong> set to <strong>Published</strong> (or Scheduled with a date)<br/>
+        ☐ <strong>SEO Description</strong> written (60–160 characters)
+      </p>
+    </div>
+  </div>
+
+  <div class="tip success">
+    <div class="tip-icon">🌐</div>
+    <div>
+      <h4>When does the post appear on the website?</h4>
+      <p>Within <strong>60 seconds</strong> of saving with status <em>Published</em>, the post appears on <strong>creatorflowus.com/blog</strong> and at its own URL <strong>creatorflowus.com/blog/[slug]</strong>.</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h3>Editing an Existing Post</h3>
+  <p class="text-muted">From the dashboard, click the <strong>✏️ pencil icon</strong> on any post. The same form opens with all existing data pre-filled. Make your changes across any tab, then click <strong>Update Post</strong>. Changes appear on the live site within 60 seconds.</p>
+
+  <h3>Deleting a Post</h3>
+  <p class="text-muted">Click the <strong>🗑 trash icon</strong> on any post in the dashboard list. A confirmation appears — click <strong>Delete</strong> to confirm. This is permanent and cannot be undone. If you just want to hide a post temporarily, use <strong>Archived</strong> status instead of deleting.</p>
+
+  <hr/>
+
+  <div style="text-align:center;padding:2rem 0 1rem;color:#94a3b8;font-size:0.78rem;">
+    <div style="width:44px;height:44px;background:rgba(123,147,255,0.08);border:1px solid rgba(123,147,255,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-size:1.2rem;">✍️</div>
+    <strong style="color:#0D1526;font-size:0.9rem;">CreatorFlowUS Blog Admin Guide</strong><br/>
+    For support, contact your developer.<br/>
+    <span style="color:#7B93FF;">creatorflowus.com</span>
+  </div>
+</div>
+
+</body>
+</html>

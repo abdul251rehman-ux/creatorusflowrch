@@ -836,6 +836,10 @@ export default function AdminBlog() {
           {!isMobile && <><span style={{ color: 'rgba(255,255,255,0.2)' }}>/</span><span style={{ color: '#64748b', fontSize: '0.8125rem', fontWeight: 500 }}>Blog Admin</span></>}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <a href="/admin-guide.html" target="_blank" rel="noreferrer"
+            style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#A8B8FF', fontSize: '0.8125rem', textDecoration: 'none', padding: isMobile ? '0.4rem 0.6rem' : '0.4rem 0.85rem', borderRadius: 8, border: '1px solid rgba(123,147,255,0.25)', background: 'rgba(123,147,255,0.08)', fontWeight: 600 }}>
+            <Icon name="file" size={13} />{!isMobile && 'How to Add a Blog'}
+          </a>
           <a href="/blog" target="_blank" rel="noreferrer"
             style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#64748b', fontSize: '0.8125rem', textDecoration: 'none', padding: isMobile ? '0.4rem 0.6rem' : '0.4rem 0.85rem', borderRadius: 8, border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.04)' }}>
             <Icon name="external" size={13} />{!isMobile && 'View Blog'}
