@@ -331,9 +331,9 @@ export default function Home() {
 
                 <div className="hidden md:flex flex-col flex-1 w-full" style={{ borderTop: '1px solid rgba(123,147,255,0.15)', paddingTop: '1rem' }}>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4" style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{service.details}</p>
-                  <Link href="/services" className="btn-secondary !py-3 !px-4 !text-sm" onClick={e => e.stopPropagation()}>
+                  <span className="btn-secondary !py-3 !px-4 !text-sm">
                     View Full Services →
-                  </Link>
+                  </span>
                 </div>
               </Link>
             ))}

@@ -9,7 +9,7 @@ const contactInfo = [
       </svg>
     ),
     label: 'Phone',
-    value: '+44 7735 390061',
+    value: '03228698997',
     sub: 'Available 24/7',
   },
   {
@@ -19,7 +19,7 @@ const contactInfo = [
       </svg>
     ),
     label: 'Email',
-    value: 'info@creatorflowus.com',
+    value: 'creatorflowusa@gmail.com',
     sub: 'We respond within 24 hours',
   },
   {
@@ -86,7 +86,7 @@ Service: ${formData.service || '—'}
 Message:
 ${formData.message}`
     );
-    window.location.href = `mailto:info@creatorflowus.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:creatorflowusa@gmail.com?subject=${subject}&body=${body}`;
     setStatus('sent');
     setFormData({ name: '', service: '', message: '' });
   }
@@ -112,7 +112,7 @@ ${formData.message}`
       '\n— Sent via creatorflowus.com',
     ];
     const text = encodeURIComponent(msgParts.filter(Boolean).join('\n'));
-    window.open(`https://wa.me/447735390061?text=${text}`, '_blank');
+    window.open(`https://wa.me/923228698997?text=${text}`, '_blank');
   }
 
   const inputClass = 'input-field';

@@ -41,8 +41,8 @@ export default function Privacy() {
             <h2 className="text-3xl font-bold mb-4 text-slate-900">Contact Us</h2>
             <p className="text-slate-600 leading-relaxed">
               If you have any questions about this privacy policy, please contact us at{' '}
-              <a href="mailto:info@creatorflowus.com" className="text-slate-700 underline hover:text-slate-900 transition-colors">
-                info@creatorflowus.com
+              <a href="mailto:creatorflowusa@gmail.com" className="text-slate-700 underline hover:text-slate-900 transition-colors">
+                creatorflowusa@gmail.com
               </a>
               .
             </p>
