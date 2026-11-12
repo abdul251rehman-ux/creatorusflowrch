@@ -93,8 +93,8 @@ export default function Layout({ children, title, description }) {
                   },
                   "image": { "@id": "https://www.creatorflowus.com/#logo" },
                   "description": "Expert social media growth strategies for creators and businesses. CREATORFLOWUS helps creators and brands dominate TikTok, YouTube, Instagram, Facebook, and more.",
-                  "email": "info@creatorflowus.com",
-                  "telephone": "+447735390061",
+                  "email": "creatorflowusa@gmail.com",
+                  "telephone": "+923228698997",
                   "sameAs": [
                     "https://www.tiktok.com/@creatorflowus",
                     "https://youtube.com/@creatorflowus",
@@ -280,8 +280,8 @@ export default function Layout({ children, title, description }) {
               <div>
                 <h4 className="text-slate-300 font-semibold mb-3 text-xs uppercase tracking-widest">Contact</h4>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li><a href="mailto:info@creatorflowus.com" className="hover:text-white transition-colors text-xs">info@creatorflowus.com</a></li>
-                  <li><a href="tel:+447735390061" className="hover:text-white transition-colors">+44 7735 390061</a></li>
+                  <li><a href="mailto:creatorflowusa@gmail.com" className="hover:text-white transition-colors text-xs">creatorflowusa@gmail.com</a></li>
+                  <li><a href="tel:+923228698997" className="hover:text-white transition-colors">03228698997</a></li>
                   <li>Chak 47 TDA, Bhakkar<br />Punjab, Pakistan</li>
                 </ul>
               </div>
@@ -371,7 +371,7 @@ export default function Layout({ children, title, description }) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </span>
-                  <span className="text-slate-400">info@creatorflowus.com</span>
+                  <span className="text-slate-400">creatorflowusa@gmail.com</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500 mt-0.5 flex-shrink-0">
@@ -379,7 +379,7 @@ export default function Layout({ children, title, description }) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </span>
-                  <span className="text-slate-400">+44 7735 390061</span>
+                  <span className="text-slate-400">03228698997</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500 mt-0.5 flex-shrink-0">
